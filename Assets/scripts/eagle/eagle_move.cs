@@ -9,6 +9,7 @@ public class eagle_move : MonoBehaviour
     public int eagle_distance;
     public Vector3 eagle_start;
     public int eagle_speed;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +22,18 @@ public class eagle_move : MonoBehaviour
     {
         if(eagle_not_alerted)
         {
-            if (this.transform.position.y - eagle_start.y >= eagle_distance)
+            if (this.transform.position.x - eagle_start.x >= eagle_distance)
             {
                 this.transform.position = eagle_start;
             }
             else
             {
-                eagle_rb.transform.TransformDirection(Vector3.forward*eagle_speed);
+                eagle_rb.velocity = transform.TransformDirection(Vector3.right*eagle_speed);
             }
+        }
+        else
+        {
+            eagle_rb.transform.position = new Vector3(player.transform.position.x + 5, player.transform.position.y + 3, player.transform.position.z + 1);
         }
     }
 }
