@@ -8,6 +8,7 @@ TagManager:
   - village
   - feather
   - terrain
+  - well
   layers:
   - Default
   - TransparentFX

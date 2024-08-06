@@ -22,7 +22,7 @@ public class eagle_move : MonoBehaviour
     {
         if(eagle_not_alerted)
         {
-            if (this.transform.position.x - eagle_start.x >= eagle_distance)
+            if (this.transform.position.z - eagle_start.z >= eagle_distance)
             {
                 this.transform.position = eagle_start;
             }
@@ -33,7 +33,7 @@ public class eagle_move : MonoBehaviour
         }
         else
         {
-            eagle_rb.transform.position = new Vector3(player.transform.position.x + 5, player.transform.position.y + 3, player.transform.position.z + 1);
+            eagle_rb.transform.position = new Vector3(player.transform.position.x + 40, player.transform.position.y + 20, player.transform.position.z + 20);
         }
     }
 }

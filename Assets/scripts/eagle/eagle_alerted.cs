@@ -6,7 +6,6 @@ public class eagle_alerted : MonoBehaviour
 {
     public Rigidbody eagle_rb;
     public GameObject player;
-    public GameObject eagle;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +15,9 @@ public class eagle_alerted : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(this.transform.position, Vector3.down, 3))
+        if (Physics.Raycast(this.transform.position, Vector3.down, 500f, 3))
         {
-            eagle.GetComponent<eagle_move>().eagle_not_alerted = false;
+            this.GetComponent<eagle_move>().eagle_not_alerted = false;
         }
     }
 }
