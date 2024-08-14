@@ -7,8 +7,19 @@ public class feather_instantiation : MonoBehaviour
     public int randx;
     public int randz;
     public GameObject feather;
-    // Start is called before the first frame update
-    void Start()
+    public bool collected;
+    void Awake()
+    {
+        Scatter();
+    }
+    void Update()
+    {
+        if (collected)
+        {
+            Scatter();
+        }
+    }
+    void Scatter()
     {
         randx = Random.Range(2000, 2200);
         randz = Random.Range(2000, 2200);
