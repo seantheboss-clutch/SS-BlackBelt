@@ -6,7 +6,7 @@ public class player_collision : MonoBehaviour
 {
     public GameObject GameManager;
     public GameObject feather;
-
+    public bool player_touch_well;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "feather")
@@ -23,5 +23,13 @@ public class player_collision : MonoBehaviour
             this.GetComponent<player_move>().terrain = false;
 
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+       if(other.gameObject.tag == "well")
+       {
+            other.gameObject.SetActive(false);
+            player_touch_well = true;
+       }
     }
 }

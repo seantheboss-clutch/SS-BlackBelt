@@ -45,7 +45,7 @@ public class player_move : MonoBehaviour
         }
         if (Input.GetKeyDown("3"))
         {
-            setUpOrder(2);
+            setUpOrder(3);
         }
         void setUpOrder(int a)
         {
