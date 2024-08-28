@@ -24,7 +24,7 @@ public class eagle_move : MonoBehaviour
         {
             if (this.transform.position.z - eagle_start.z >= eagle_distance)
             {
-                this.transform.position = eagle_start;
+                this.transform.position = new Vector3(eagle_start.x, eagle_start.y-100f, eagle_start.z);
             }
             else
             {

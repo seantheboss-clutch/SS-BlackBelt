@@ -8,6 +8,7 @@ public class store : MonoBehaviour
     public GameObject player;
     public GameObject[] store_items;
     public bool can_buy_item;
+    public int feather_count_st;
     public string[] names_of_items = {
         "water",
         "hook",
@@ -21,15 +22,25 @@ public class store : MonoBehaviour
     {
         if(request_pur)
         {
-            game_manager.GetComponent<GameManager>().check_balance = true;
-            game_manager.GetComponent<GameManager>().debit_to_check = price_req;
+            feather_count_st = game_manager.GetComponent<GameManager>().feather_count;
+            if(feather_count_st > prices[price_req-1])
+            {
+                can_buy_item = true;
+            }
         }
         if(can_buy_item)
         {
-            Instantiate(store_items[price_req - 1], new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z), Quaternion.identity);
-            game_manager.GetComponent<GameManager>().transaction = prices[price_req - 1];
-            game_manager.GetComponent<GameManager>().buy = true;
-            player.GetComponent<player_powerup>().powerup = names_of_items[price_req - 1];
+            buyItem();
+            can_buy_item = false;
+            //player.GetComponent<player_powerup>().powerup = names_of_items[price_req - 1];
         }    
+    }
+    void buyItem()
+    {
+        Instantiate(store_items[price_req - 1], new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z), Quaternion.identity);
+        game_manager.GetComponent<GameManager>().transaction = prices[price_req - 1];
+        game_manager.GetComponent<GameManager>().buy = true;
+        /*can_buy_item = false;*/
+        request_pur = false;
     }
 }

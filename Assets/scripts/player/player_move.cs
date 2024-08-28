@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player_move : MonoBehaviour
 {
@@ -10,9 +11,14 @@ public class player_move : MonoBehaviour
     public bool climb;
     public GameObject game_manager;
     public GameObject store;
-    public int button;
+    public string dist = "";
+    public Text distance_from_feather;
+
     void Update()
     {
+        print(player_rb.velocity.y);
+        distance_from_feather.text = dist;
+        print(dist);
         if (Input.GetKeyDown("w"))
         {
             player_rb.velocity = transform.TransformDirection(Vector3.forward * speed);
@@ -23,15 +29,18 @@ public class player_move : MonoBehaviour
         }
         if (Input.GetKeyDown("space"))
         {
-            if (climb)
-            {
-                player_rb.velocity = transform.TransformDirection(Vector3.up * speed * 2);
-            }
-            else
-            {
-                if (!terrain)
+            if (player_rb.velocity.y >= -1)
+            { 
+                if (climb)
                 {
-                    player_rb.velocity = transform.TransformDirection(Vector3.up * speed);
+                    player_rb.velocity = transform.TransformDirection(Vector3.up * speed * 2);
+                }
+                else
+                {
+                    if (!terrain)
+                    {
+                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed);
+                    }
                 }
             }
         }

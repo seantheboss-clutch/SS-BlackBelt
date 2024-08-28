@@ -15,7 +15,7 @@ public class eagle_alerted : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(this.transform.position, Vector3.down, 500f, 3))
+        if (Physics.Raycast(this.transform.position, Vector3.down, 3f, 3))
         {
             this.GetComponent<eagle_move>().eagle_not_alerted = false;
         }

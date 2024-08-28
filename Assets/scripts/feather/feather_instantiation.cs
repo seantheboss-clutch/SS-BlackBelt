@@ -16,13 +16,14 @@ public class feather_instantiation : MonoBehaviour
     {
         if (collected)
         {
+            Destroy(feather);
             Scatter();
         }
     }
     void Scatter()
     {
-        randx = Random.Range(2000, 2200);
-        randz = Random.Range(2000, 2200);
-        Instantiate(feather, new Vector3(randx, 0, randz), Quaternion.identity);
+        randx = Random.Range(0, 4000);
+        randz = Random.Range(0, 4000);
+        Instantiate(feather,new Vector3(randx, 3000, randz),Quaternion.identity);
     }
 }

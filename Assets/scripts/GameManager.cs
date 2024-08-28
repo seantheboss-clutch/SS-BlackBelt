@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public bool water_obtained;
     public bool player_touched_well;
-    public bool check_balance;
     public int debit_to_check;
     public GameObject store;
     // Update is called once per fr
@@ -32,11 +31,14 @@ public class GameManager : MonoBehaviour
         if (got)
         {
             feather_count++;
+            got = false;
         }
         if (buy)
         {
             Debit(transaction);
+            buy = false;
         }
+ 
         feather_count_text.text = feather_count.ToString();
         if (water_obtained)
         {
@@ -45,20 +47,9 @@ public class GameManager : MonoBehaviour
         {
             water_count += 5;
         }
-        if(check_balance)
-        {
-            checkBalance(debit_to_check);
-        }
     }
     void Debit(int transact)
     {
         feather_count -= transact;
-    }
-    void checkBalance(int d_t_c)
-    {
-        if(d_t_c >= feather_count)
-        {
-            store.GetComponent<store>().can_buy_item = true;
-        }
     }
 }
