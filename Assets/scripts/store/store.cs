@@ -23,7 +23,7 @@ public class store : MonoBehaviour
         if(request_pur)
         {
             feather_count_st = game_manager.GetComponent<GameManager>().feather_count;
-            if(feather_count_st > prices[price_req-1])
+            if(feather_count_st >= prices[price_req-1])
             {
                 can_buy_item = true;
             }

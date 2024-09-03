@@ -15,10 +15,21 @@ public class player_powerup : MonoBehaviour
                 break;
             case "hook":
                 this.GetComponent<player_move>().climb = true;
+                Invoke("Turn_off_hook", 8f);
                 break;
             case "light":
-                print("let there be light");//Code that "illuminates objects
+                this.GetComponent<player_flashlight>().has_light = true;
+                Invoke("Turn_off_light", 8f);
                 break;
         }
+    }
+    void Turn_off_light()
+    {
+        this.GetComponent<player_flashlight>().has_light = false;
+    }
+    void Turn_off_hook()
+    {
+        this.GetComponent<player_move>().climb = false;
+
     }
 }
