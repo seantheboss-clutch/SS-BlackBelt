@@ -19,7 +19,7 @@ public class sun_rotation : MonoBehaviour
     void Awake()
     {
         start_mid_up_rot(0);
-        time[0].text = "24";
+        time[0].text = "1";
         time[1].text = "00";
         time[2].text = "00";
     }
