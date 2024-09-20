@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wing1 : MonoBehaviour
+public class player_casualty : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

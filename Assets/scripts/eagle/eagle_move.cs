@@ -34,6 +34,8 @@ public class eagle_move : MonoBehaviour
         else
         {
             eagle_rb.transform.position = new Vector3(player.transform.position.x + 40, player.transform.position.y + 20, player.transform.position.z + 20);
+           
         }
     }
+   
 }

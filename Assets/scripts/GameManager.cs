@@ -5,19 +5,25 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("feathers")]
     public int feather_count;
+    public Text feather_count_text;
+
+    [Header("store")]
     public bool got;
     public bool buy;
-    public bool end_game;
+    public int debit_to_check;
     public int transaction;
-    public Text feather_count_text;
+    public GameObject store;
+
+    [Header("water")]
     public int water_count;
     public Text water_count_text;
-    public GameObject player;
     public bool water_obtained;
+
+    public GameObject player;
     public bool player_touched_well;
-    public int debit_to_check;
-    public GameObject store;
+    public bool end_game;
     // Update is called once per fr
     // ame
     void Awake()
@@ -51,5 +57,10 @@ public class GameManager : MonoBehaviour
     void Debit(int transact)
     {
         feather_count -= transact;
+    }
+
+    void TakeCasualty()
+    {
+
     }
 }
