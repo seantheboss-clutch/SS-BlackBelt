@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class eagle_attack : MonoBehaviour
 {
-    private GameObject manager;
+    public GameObject manager;
     public Transform player_t;
-    private int attack_value;
+    public int attack_value;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class eagle_attack : MonoBehaviour
     {
         if (Physics.Raycast(this.transform.position, new Vector3(120, 0, 30), 100f))
         {
-            manager.GetComponent<GameManager>().;
+            manager.GetComponent<GameManager>().water_count -= a;
         }
     }
 }

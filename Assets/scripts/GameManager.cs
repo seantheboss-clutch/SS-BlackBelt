@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,33 +35,32 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (got)
+        if (!end_game)
         {
-            feather_count++;
-            got = false;
-        }
-        if (buy)
-        {
-            Debit(transaction);
-            buy = false;
-        }
- 
-        feather_count_text.text = feather_count.ToString();
-        if (water_obtained)
-        {
-            water_count += 10;
-        } else if (player_touched_well)
-        {
-            water_count += 5;
-        }
+            if (got)
+            {
+                feather_count++;
+                got = false;
+            }
+            if (buy)
+            {
+                Debit(transaction);
+                buy = false;
+            }
+
+            feather_count_text.text = feather_count.ToString();
+            if (water_obtained)
+            {
+                water_count += 10;
+            }
+            else if (player_touched_well)
+            {
+                water_count += 5;
+            }
+        } 
     }
     void Debit(int transact)
     {
         feather_count -= transact;
-    }
-
-    void TakeCasualty()
-    {
-
     }
 }

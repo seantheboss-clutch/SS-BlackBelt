@@ -13,19 +13,28 @@ public class player_move : MonoBehaviour
     public GameObject store;
     public string dist = "";
     public Text distance_from_feather;
+    public bool player_can_move = true;
+    public enum attacks {
+        HIT = 1,
+        HIT_DOUBLE = 2
+    }
 
     void Update()
     {
+        
         print(player_rb.velocity.y);
         distance_from_feather.text = dist;
         print(dist);
-        if (Input.GetKeyDown("w"))
+        if (player_can_move)
         {
-            player_rb.velocity = transform.TransformDirection(Vector3.forward * speed);
-        }
-        if (Input.GetKeyDown("s"))
-        {
-            player_rb.velocity = transform.TransformDirection(Vector3.back * speed);
+            if (Input.GetKeyDown("w"))
+            {
+                player_rb.velocity = transform.TransformDirection(Vector3.forward * speed);
+            }
+            if (Input.GetKeyDown("s"))
+            {
+                player_rb.velocity = transform.TransformDirection(Vector3.back * speed);
+            }
         }
         if (Input.GetKeyDown("space"))
         {
