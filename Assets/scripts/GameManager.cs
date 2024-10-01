@@ -47,16 +47,18 @@ public class GameManager : MonoBehaviour
                 Debit(transaction);
                 buy = false;
             }
-
-            feather_count_text.text = feather_count.ToString();
             if (water_obtained)
             {
                 water_count += 10;
             }
-            else if (player_touched_well)
+            if (player_touched_well)
             {
                 water_count += 5;
+                player_touched_well = false;
             }
+            water_count_text.text = water_count.ToString();
+            feather_count_text.text = feather_count.ToString();
+
         } 
     }
     void Debit(int transact)

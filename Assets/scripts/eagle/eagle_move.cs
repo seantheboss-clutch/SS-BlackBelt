@@ -35,11 +35,11 @@ public class eagle_move : MonoBehaviour
         }
         else
         {
-            while (Vector3.Distance(this.transform.position, player.transform.position) > 25f)
+           /* while (Vector3.Distance(this.transform.position, player.transform.position) > 25f)
             {
                 eagle_rb.velocity = transform.TransformDirection(Vector3.down * 5);
             
-            }
+            }*/
             if(Vector3.Distance(this.transform.position, player.transform.position) < 1f)
             {
                 print("you died");

@@ -5,8 +5,11 @@ using UnityEngine;
 public class player_collision : MonoBehaviour
 {
     public GameObject GameManager;
+    public Quaternion w_quat = Quaternion.Euler(90f,0f,0f);
+    public Vector3 w_rot;
     public GameObject feather;
-    public bool player_touch_well;
+    public well_assignment wa;
+    public bool drink;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "feather")
@@ -23,13 +26,16 @@ public class player_collision : MonoBehaviour
             this.GetComponent<player_move>().terrain = false;
 
         }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-       if(other.gameObject.tag == "well")
-       {
-            other.gameObject.SetActive(false);
-            player_touch_well = true;
-       }
+        if (collision.gameObject.tag == "well")
+        { 
+
+            if (collision.gameObject.transform.parent.name != wa.dead_well.name)
+            {
+               GameManager.GetComponent<GameManager>().player_touched_well = true;
+            }
+            collision.gameObject.SetActive(false);  
+            
+        }
+
     }
 }

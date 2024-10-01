@@ -21,10 +21,7 @@ public class player_move : MonoBehaviour
 
     void Update()
     {
-        
-        print(player_rb.velocity.y);
         distance_from_feather.text = dist;
-        print(dist);
         if (player_can_move)
         {
             if (Input.GetKeyDown("w"))
@@ -35,24 +32,25 @@ public class player_move : MonoBehaviour
             {
                 player_rb.velocity = transform.TransformDirection(Vector3.back * speed);
             }
-        }
-        if (Input.GetKeyDown("space"))
-        {
-            if (player_rb.velocity.y >= -1)
-            { 
-                if (climb)
+            if (Input.GetKeyDown("space"))
+            {
+                if (player_rb.velocity.y >= -1)
                 {
-                    player_rb.velocity = transform.TransformDirection(Vector3.up * speed * 2);
-                }
-                else
-                {
-                    if (!terrain)
+                    if (climb)
                     {
-                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed);
+                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed * 2);
+                    }
+                    else
+                    {
+                        if (!terrain)
+                        {
+                            player_rb.velocity = transform.TransformDirection(Vector3.up * speed);
+                        }
                     }
                 }
             }
         }
+        
         if(Input.GetKeyDown("1"))
         {
             setUpOrder(1);
