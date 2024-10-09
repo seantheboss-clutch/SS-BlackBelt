@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public int water_count;
     public Text water_count_text;
     public bool water_obtained;
+    public int water_casualty;
 
     public GameObject player;
     public bool player_touched_well;
@@ -56,13 +57,26 @@ public class GameManager : MonoBehaviour
                 water_count += 5;
                 player_touched_well = false;
             }
+            if(water_casualty > 0)
+            {
+                Casualty(water_casualty);
+            }
             water_count_text.text = water_count.ToString();
             feather_count_text.text = feather_count.ToString();
 
-        } 
+        }
+        else
+        {
+            //"Load win or lose scene
+        }
     }
     void Debit(int transact)
     {
         feather_count -= transact;
+    }
+    void Casualty(int casualty)
+    {
+        water_count -= casualty;
+        water_casualty = 0;
     }
 }

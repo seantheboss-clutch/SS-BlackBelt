@@ -25,7 +25,7 @@ public class eagle_attack : MonoBehaviour
     {
         if (Physics.Raycast(this.transform.position, new Vector3(120, 0, 30), 100f))
         {
-            manager.GetComponent<GameManager>().water_count -= a;
+            manager.GetComponent<GameManager>().water_casualty = a;
         }
     }
 }
