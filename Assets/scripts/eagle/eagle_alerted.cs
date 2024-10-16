@@ -9,7 +9,7 @@ public class eagle_alerted : MonoBehaviour
     public LayerMask layerMask;
     void Update()
     {
-        if (Physics.Raycast(this.transform.position, Vector3.down, 1000f, layerMask))
+        if (Physics.Raycast(this.transform.position, Vector3.down, 2000f, layerMask))
         {
             this.GetComponent<eagle_move>().eagle_not_alerted = false;
         }

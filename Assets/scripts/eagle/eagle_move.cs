@@ -29,14 +29,16 @@ public class eagle_move : MonoBehaviour
         {
             if (eagle_not_engaged)
             {
-                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 200, this.transform.position.z);
-                e_r.eagle_test_rot = new Vector3(0, -90, 0);
+                this.transform.position = new Vector3(this.transform.position.x, 200, this.transform.position.z);
+                e_r.eagle_test_rot = new Vector3(0, 67, 0);
+                e_r.Eagle_Rotation();
                 eagle_start = this.transform.position;
                 eagle_not_engaged = false;
             }
             if (this.transform.position.z - eagle_start.z >= eagle_distance)
             {
                 this.transform.position = new Vector3(eagle_start.x, eagle_start.y - 100f, eagle_start.z);
+                eagle_speed += 10;
             }
             else
             {
@@ -45,13 +47,7 @@ public class eagle_move : MonoBehaviour
 
         }
         else
-        {
-            if(Vector3.Distance(this.transform.position, player.transform.position) < 1f)
-            {
-                print("you died");
-                //SceneManager.LoadScene()
-            } 
-                
+        {    
             eagle_rb.transform.position = new Vector3(player.transform.position.x,player.transform.position.y+15f,player.transform.position.z+30f);
             p_a.times_eagle_attacked += 1;
         }

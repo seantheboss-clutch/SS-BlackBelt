@@ -14,14 +14,9 @@ public class player_move : MonoBehaviour
     public string dist = "";
     public Text distance_from_feather;
     public bool player_can_move = true;
-    public enum attacks {
-        HIT = 1,
-        HIT_DOUBLE = 2
-    }
-
     void Update()
     {
-        distance_from_feather.text = dist;
+        //distance_from_feather.text = dist;
         if (player_can_move)
         {
             if (Input.GetKeyDown("w"))
@@ -34,7 +29,7 @@ public class player_move : MonoBehaviour
             }
             if (Input.GetKeyDown("space"))
             {
-                if (player_rb.velocity.y >= -1)
+                if (player_rb.velocity.y >= -3)
                 {
                     if (climb)
                     {
