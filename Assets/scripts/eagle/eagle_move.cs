@@ -14,6 +14,7 @@ public class eagle_move : MonoBehaviour
     public int eagle_speed;
     public GameObject player;
     public bool eagle_not_engaged;
+    public bool oops;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +30,27 @@ public class eagle_move : MonoBehaviour
         {
             if (eagle_not_engaged)
             {
-                this.transform.position = new Vector3(this.transform.position.x, 200, this.transform.position.z);
+                this.transform.position = new Vector3(this.transform.position.x, 300, this.transform.position.z);
                 e_r.eagle_test_rot = new Vector3(0, 67, 0);
                 e_r.Eagle_Rotation();
                 eagle_start = this.transform.position;
                 eagle_not_engaged = false;
             }
-            if (this.transform.position.z - eagle_start.z >= eagle_distance)
+            if(oops)
             {
-                this.transform.position = new Vector3(eagle_start.x, eagle_start.y - 100f, eagle_start.z);
-                eagle_speed += 10;
+                eagle_rb.velocity = transform.TransformDirection(Vector3.left * eagle_speed);
+                oops = false;
+            }
+            if (this.transform.position.z - eagle_start.z >= eagle_distance || this.transform.position.y > 400)
+            {
+                e_r.eagle_test_rot = new Vector3(Random.Range(-120f,120f),Random.Range(-120f,120f),0f);
+                if(e_r.eagle_test_rot.y == 0)
+                {
+                    e_r.eagle_test_rot.y = 120;
+                }
+                e_r.Eagle_Rotation();
+                eagle_speed += 1;
+                eagle_rb.velocity = transform.TransformDirection(Vector3.right * eagle_speed);
             }
             else
             {
