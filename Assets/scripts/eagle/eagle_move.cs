@@ -14,7 +14,7 @@ public class eagle_move : MonoBehaviour
     public int eagle_speed;
     public GameObject player;
     public bool eagle_not_engaged;
-    public bool oops;
+    public bool bumped;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,11 @@ public class eagle_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(eagle_rb.velocity.y <= 0)
+        {
+            eagle_rb.useGravity = false;
+            //Invoke("gravity_check", 1f);
+        }
         if (eagle_not_alerted)
         {
             if (eagle_not_engaged)
@@ -36,12 +41,7 @@ public class eagle_move : MonoBehaviour
                 eagle_start = this.transform.position;
                 eagle_not_engaged = false;
             }
-            if(oops)
-            {
-                eagle_rb.velocity = transform.TransformDirection(Vector3.left * eagle_speed);
-                oops = false;
-            }
-            if (this.transform.position.z - eagle_start.z >= eagle_distance || this.transform.position.y > 400)
+            if (Vector3.Distance(this.transform.position, eagle_start) >= eagle_distance || this.transform.position.y > 400 || bumped)
             {
                 e_r.eagle_test_rot = new Vector3(Random.Range(-120f,120f),Random.Range(-120f,120f),0f);
                 if(e_r.eagle_test_rot.y == 0)
@@ -49,8 +49,12 @@ public class eagle_move : MonoBehaviour
                     e_r.eagle_test_rot.y = 120;
                 }
                 e_r.Eagle_Rotation();
-                eagle_speed += 1;
+                //eagle_speed += 1;
                 eagle_rb.velocity = transform.TransformDirection(Vector3.right * eagle_speed);
+                if(bumped)
+                {
+                    bumped = false;
+                }
             }
             else
             {
@@ -63,6 +67,10 @@ public class eagle_move : MonoBehaviour
             eagle_rb.transform.position = new Vector3(player.transform.position.x,player.transform.position.y+15f,player.transform.position.z+30f);
             p_a.times_eagle_attacked += 1;
         }
+    }
+    void gravity_check()
+    {
+        eagle_rb.useGravity = true;
     }
    
 }
