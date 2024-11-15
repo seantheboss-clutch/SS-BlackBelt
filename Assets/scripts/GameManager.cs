@@ -61,8 +61,8 @@ public class GameManager : MonoBehaviour
             {
                 Casualty(water_casualty);
             }
-            water_count_text.text = water_count.ToString();
-            feather_count_text.text = feather_count.ToString();
+            water_count_text.text = "water_count: "+water_count.ToString();
+            feather_count_text.text ="feather_count: "+feather_count.ToString();
 
         }
         else

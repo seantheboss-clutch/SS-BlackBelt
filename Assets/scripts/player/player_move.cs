@@ -33,13 +33,13 @@ public class player_move : MonoBehaviour
                 {
                     if (climb)
                     {
-                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed*2);
+                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed*10);
                     }
                     else
                     {
                        
                         
-                       player_rb.velocity = transform.TransformDirection(Vector3.up * speed/10);
+                       player_rb.velocity = transform.TransformDirection(Vector3.up * speed);
                         
                     }
                 }

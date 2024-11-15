@@ -13,11 +13,14 @@ public class player_attack : MonoBehaviour
     public KeyCode attack_letter = KeyCode.B;
     public int p_attack_count = 0;
     public int p_required_attack_streak = 10;
+    public int index_picked = 0;
     public int times_eagle_attacked = 0;
     public float p_attack_limit_time = 5;
+    public float palt;
 
     void Start()
     {
+        palt = p_attack_limit_time;
         player_assigned_letter.text = attack_letter.ToString();
         attack_letters[0] = KeyCode.B;
         attack_letters[1] = KeyCode.Q;
@@ -30,14 +33,15 @@ public class player_attack : MonoBehaviour
     {
         if (e_m.eagle_not_alerted == false)
         {
-            Attack_Timer(p_required_attack_streak * times_eagle_attacked);
+            Attack_Timer(p_required_attack_streak * (times_eagle_attacked+1));
         }
         player_assigned_letter.text = attack_letter.ToString();
         print(attack_letter);
     }
     void Roll()
     {
-        attack_letter = attack_letters[Random.Range(0, 3)];
+        index_picked = Random.Range(0, 3);
+        attack_letter = attack_letters[index_picked];
         player_assigned_letter.text = attack_letter.ToString();
     }
     void Attack_Timer(int streak)
@@ -56,7 +60,7 @@ public class player_attack : MonoBehaviour
                     print("Uh");
                     /*                      game_manager.GetComponent<GameManager>().water_casualty = 0;
                     */
-                    p_attack_limit_time = 5;
+                    p_attack_limit_time = palt;
                 }
             }
             else
@@ -65,16 +69,23 @@ public class player_attack : MonoBehaviour
                 {
                     print("ayahyahyahyahyah");
                     p_attack_count += 1;
+                    print(p_attack_count);
+                    if(p_attack_count >= 20)
+                    {
+                        print("running");
+                        e_m.eagle_not_alerted = true;
+                        e_m.eagle_not_engaged = true;
+                    }
                     Roll();
-                    p_attack_limit_time = 5;
+                    p_attack_limit_time = palt;
 
-                }
+                }   
             }
         }
         else
         {
-            e_m.eagle_not_alerted = true;
-            e_m.eagle_not_engaged = true;
+            /*e_m.eagle_not_alerted = true;
+            e_m.eagle_not_engaged = true;*/
         }
     }
 

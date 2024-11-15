@@ -15,6 +15,7 @@ public class eagle_move : MonoBehaviour
     public GameObject player;
     public bool eagle_not_engaged;
     public bool bumped;
+    public int rand;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,9 @@ public class eagle_move : MonoBehaviour
             }
             if (Vector3.Distance(this.transform.position, eagle_start) >= eagle_distance || this.transform.position.y > 400 || bumped)
             {
+
                 e_r.eagle_test_rot = new Vector3(Random.Range(-120f,120f),Random.Range(-120f,120f),0f);
+                randomEncounter();
                 if(e_r.eagle_test_rot.y == 0)
                 {
                     e_r.eagle_test_rot.y = 120;
@@ -71,6 +74,11 @@ public class eagle_move : MonoBehaviour
     void gravity_check()
     {
         eagle_rb.useGravity = true;
+    }
+    void randomEncounter()
+    {
+        int rand_ = Random.Range(0, 10);
+        print(rand);
     }
    
 }

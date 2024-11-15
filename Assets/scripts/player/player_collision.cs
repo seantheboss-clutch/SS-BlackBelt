@@ -12,7 +12,7 @@ public class player_collision : MonoBehaviour
     public bool drink;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "feather")
+        if (gameObject.CompareTag("feather"))
         {
             GameManager.GetComponent<GameManager>().got = true;
             feather.GetComponentInChildren<feather_instantiation>().collected = true;
