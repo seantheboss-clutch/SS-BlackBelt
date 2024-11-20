@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public bool player_touched_well;
     public bool end_game;
+
+    [Header("journals")]
+
+    public string[] journal_secrets = {"I","'","M","I","N","N","E","S","T"};
+    public Text[] secret_text = {};
+    public bool revelation;
     // Update is called once per fr
     // ame
     void Awake()
@@ -33,6 +39,11 @@ public class GameManager : MonoBehaviour
         feather_count = 5;
         feather_count_text.text = "0";
         print(feather_count);
+        for(int i = 0; i < secret_text.Length; i++)
+        {
+            secret_text[i].text = "_"; //SetValue("_", i);
+        }
+        
     }
     void Update()
     {
@@ -63,6 +74,12 @@ public class GameManager : MonoBehaviour
             }
             water_count_text.text = "water_count: "+water_count.ToString();
             feather_count_text.text ="feather_count: "+feather_count.ToString();
+            
+            if(revelation)
+            {
+                Reveal();
+                revelation = false;
+            }
 
         }
         else
@@ -78,5 +95,10 @@ public class GameManager : MonoBehaviour
     {
         water_count -= casualty;
         water_casualty = 0;
+    }
+    void Reveal()
+    {
+        int secret_to_reveal_index = Random.Range(0, secret_text.Length - 1);
+        secret_text[secret_to_reveal_index].text = journal_secrets[secret_to_reveal_index];
     }
 }

@@ -7,17 +7,23 @@ public class player_collision : MonoBehaviour
     public GameObject GameManager;
     public Quaternion w_quat = Quaternion.Euler(90f,0f,0f);
     public Vector3 w_rot;
-    public GameObject feather;
+    public GameObject feather_i;
     public well_assignment wa;
     public bool drink;
     private void OnCollisionEnter(Collision collision)
     {
-        if (gameObject.CompareTag("feather"))
+        if (collision.gameObject.CompareTag("feather"))
         {
             GameManager.GetComponent<GameManager>().got = true;
-            feather.GetComponentInChildren<feather_instantiation>().collected = true;
+            feather_i.GetComponent<feather_instantiation>().collected = true;
             
         }
+        if(collision.gameObject.CompareTag("journal"))
+        {
+            Destroy(collision.gameObject);
+            GameManager.GetComponent<GameManager>().revelation = true;
+            Destroy(collision.gameObject);
+        }   
         if (collision.gameObject.tag == "terrain")
         {
             this.GetComponent<player_move>().terrain = true;

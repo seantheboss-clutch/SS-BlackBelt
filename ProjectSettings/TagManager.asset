@@ -9,6 +9,7 @@ TagManager:
   - feather
   - terrain
   - well
+  - journal
   layers:
   - Default
   - TransparentFX
