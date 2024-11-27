@@ -7,24 +7,30 @@ public class feather_instantiation : MonoBehaviour
     public int randx;
     public int randz;
     public GameObject feather;
+    public GameObject old_feather;
     public bool collected;
     void Awake()
     {
-        Scatter();
+        Scatter(true);
     }
     void Update()
     {
         if (collected)
         {
-            Scatter();
+            Scatter(false);
             collected = false;
-            feather.SetActive(false);
         }
     }
-    void Scatter()
+    void Scatter(bool start)
     {
         randx = Random.Range(1500, 2500);
         randz = Random.Range(1500, 2500);
-        Instantiate(feather,new Vector3(randx, 3000, randz),Quaternion.identity);
+        if(start == false)
+        {
+            old_feather = feather;
+            old_feather.SetActive(false);
+        }
+        feather = Instantiate(feather,new Vector3(randx, 3000, randz),Quaternion.identity);
+        feather.SetActive(true);
     }
 }

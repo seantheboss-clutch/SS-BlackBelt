@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class sun_rotation : MonoBehaviour
 {
     public Quaternion sq;
-    public GameObject game_manager;
+    public GameManager game_manager;
     public Vector3 sv;
     public Light sun;
     public float sun_speed;
@@ -34,7 +34,7 @@ public class sun_rotation : MonoBehaviour
             {
                 if (h < 0)
                 {
-                    game_manager.GetComponent<GameManager>().end_game = true;
+                    game_manager.end_game = true;
                 }
                 else
                 {

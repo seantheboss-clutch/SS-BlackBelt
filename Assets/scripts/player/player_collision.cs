@@ -42,6 +42,11 @@ public class player_collision : MonoBehaviour
             collision.gameObject.SetActive(false);  
             
         }
+        if(collision.gameObject.CompareTag("village"))
+        {
+            GameManager.GetComponent<GameManager>().end_game = true;
+            GameManager.GetComponent<GameManager>().destination = true;
+        }
 
     }
 }

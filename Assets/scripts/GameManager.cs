@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public bool player_touched_well;
     public bool end_game;
+    public bool destination;
+
+    [Header("animations for end of game")]
+    public Animator endgame;
 
     [Header("journals")]
 
@@ -84,7 +88,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //"Load win or lose scene
+            if(destination)
+            {
+                Win();
+            }
+            else
+            {
+                Lose();
+            }
         }
     }
     void Debit(int transact)
@@ -100,5 +111,13 @@ public class GameManager : MonoBehaviour
     {
         int secret_to_reveal_index = Random.Range(0, secret_text.Length - 1);
         secret_text[secret_to_reveal_index].text = journal_secrets[secret_to_reveal_index];
+    }
+    public void Win()
+    {
+        endgame.SetTrigger("reached_village_won");
+    }
+    public void Lose()
+    {
+        endgame.SetTrigger("ran_out_of_time_lost");
     }
 }
