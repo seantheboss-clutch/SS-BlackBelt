@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("feathers")]
     public int feather_count;
-    public Text feather_count_text;
+
 
     [Header("store")]
     public bool got;
@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
 
     [Header("water")]
     public int water_count;
-    public Text water_count_text;
     public bool water_obtained;
     public int water_casualty;
 
@@ -27,9 +26,19 @@ public class GameManager : MonoBehaviour
     public bool player_touched_well;
     public bool end_game;
     public bool destination;
+    public sun_rotation s_r;
+    public GameObject endgameobject;
 
     [Header("animations for end of game")]
     public Animator endgame;
+    public GameObject lose;
+    public GameObject win;
+
+    [Header("Sliders")]
+    public Slider water_slider;
+    public Slider feather_slider;
+    public Slider time_slider;
+
 
     [Header("journals")]
 
@@ -38,10 +47,14 @@ public class GameManager : MonoBehaviour
     public bool revelation;
     // Update is called once per fr
     // ame
-    void Awake()
+    void Start()
     {
+        endgameobject.SetActive(false);
+        destination = false;
+        water_count = 5;
         feather_count = 5;
-        feather_count_text.text = "0";
+        feather_slider.value = feather_count;
+        water_slider.value = water_count;
         print(feather_count);
         for(int i = 0; i < secret_text.Length; i++)
         {
@@ -51,9 +64,10 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (!end_game)
+        print(feather_slider.value+"swag");
+        if (end_game == false)
         {
-            if (got)
+            if (got & feather_count <= 10)
             {
                 feather_count++;
                 got = false;
@@ -63,7 +77,7 @@ public class GameManager : MonoBehaviour
                 Debit(transaction);
                 buy = false;
             }
-            if (water_obtained)
+            if (water_obtained & water_count <= 10)
             {
                 water_count += 10;
             }
@@ -76,10 +90,10 @@ public class GameManager : MonoBehaviour
             {
                 Casualty(water_casualty);
             }
-            water_count_text.text = "water_count: "+water_count.ToString();
-            feather_count_text.text ="feather_count: "+feather_count.ToString();
-            
-            if(revelation)
+            water_slider.value = water_count;
+            feather_slider.value = feather_count;
+
+            if (revelation)
             {
                 Reveal();
                 revelation = false;
@@ -92,7 +106,7 @@ public class GameManager : MonoBehaviour
             {
                 Win();
             }
-            else
+            else if(destination == false)
             {
                 Lose();
             }
@@ -114,10 +128,13 @@ public class GameManager : MonoBehaviour
     }
     public void Win()
     {
-        endgame.SetTrigger("reached_village_won");
+        endgameobject.SetActive(true);
+        lose.SetActive(false);
+
     }
     public void Lose()
     {
-        endgame.SetTrigger("ran_out_of_time_lost");
+        endgameobject.SetActive(true);
+        win.SetActive(false);
     }
 }

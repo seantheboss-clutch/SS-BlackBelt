@@ -10,6 +10,7 @@ public class player_collision : MonoBehaviour
     public GameObject feather_i;
     public well_assignment wa;
     public bool drink;
+   
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("feather"))
@@ -45,7 +46,7 @@ public class player_collision : MonoBehaviour
         if(collision.gameObject.CompareTag("village"))
         {
             GameManager.GetComponent<GameManager>().end_game = true;
-            GameManager.GetComponent<GameManager>().destination = true;
+            //GameManager.GetComponent<GameManager>().destination = true;
         }
 
     }
