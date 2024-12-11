@@ -28,11 +28,14 @@ public class GameManager : MonoBehaviour
     public bool destination;
     public sun_rotation s_r;
     public GameObject endgameobject;
+    
 
-    [Header("animations for end of game")]
+    [Header("stuff for end of game")]
     public Animator endgame;
     public GameObject lose;
     public GameObject win;
+    public int final_score;
+    public Text final_score_text;
 
     [Header("Sliders")]
     public Slider water_slider;
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             secret_text[i].text = "_"; //SetValue("_", i);
         }
-        
+        final_score_text.text = "";
     }
     void Update()
     {
@@ -89,6 +92,10 @@ public class GameManager : MonoBehaviour
             if(water_casualty > 0)
             {
                 Casualty(water_casualty);
+                if(water_count < 1)
+                {
+                    Lose();
+                }
             }
             water_slider.value = water_count;
             feather_slider.value = feather_count;
@@ -99,18 +106,20 @@ public class GameManager : MonoBehaviour
                 revelation = false;
             }
 
+            
         }
         else
         {
-            if(destination)
+            if (destination)
             {
                 Win();
             }
-            else if(destination == false)
+            else if (destination == false)
             {
                 Lose();
             }
         }
+
     }
     void Debit(int transact)
     {
@@ -130,6 +139,8 @@ public class GameManager : MonoBehaviour
     {
         endgameobject.SetActive(true);
         lose.SetActive(false);
+        final_score = feather_count + water_count+((60-s_r.s)/10)+((60-s_r.m)/10)+((60-s_r.h)/10);
+        final_score_text.text = "FINAL SCORE: " + final_score;
 
     }
     public void Lose()

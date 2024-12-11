@@ -14,7 +14,7 @@ public class sun_rotation : MonoBehaviour
     public Text[] time;
     public int h;
     public int m;
-    public float s;
+    public int s;
     
     void Awake()
     {
@@ -35,6 +35,7 @@ public class sun_rotation : MonoBehaviour
                 if (h < 0)
                 {
                     game_manager.end_game = true;
+                    game_manager.Lose();
                 }
                 else
                 {
@@ -51,7 +52,7 @@ public class sun_rotation : MonoBehaviour
         }
         else
         {
-            s -= 1f;
+            s -= 1;
         }
         time[0].text = h.ToString();
         if(m < 10)
