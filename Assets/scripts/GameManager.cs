@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         endgameobject.SetActive(false);
         destination = false;
         water_count = 5;
-        feather_count = 5;
+        feather_count = 0;
         feather_slider.value = feather_count;
         water_slider.value = water_count;
         print(feather_count);

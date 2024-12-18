@@ -19,27 +19,27 @@ public class player_move : MonoBehaviour
         //distance_from_feather.text = dist;
         if (player_can_move)
         {
-            if (Input.GetKeyDown("w"))
+            if (Input.GetKey("w"))
             {
                 player_rb.velocity = transform.TransformDirection(Vector3.forward * speed);
             }
-            if (Input.GetKeyDown("s"))
+            if (Input.GetKey("s"))
             {
                 player_rb.velocity = transform.TransformDirection(Vector3.back * speed);
             }
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKey("space"))
             {
                 if (player_rb.velocity.y >= -3)
                 {
                     if (climb)
                     {
-                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed*10);
+                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed*2);
                     }
                     else
                     {
                        
                         
-                       player_rb.velocity = transform.TransformDirection(Vector3.up * speed);
+                       player_rb.velocity = transform.TransformDirection(Vector3.up * speed/5);
                         
                     }
                 }
