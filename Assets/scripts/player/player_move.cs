@@ -7,13 +7,20 @@ public class player_move : MonoBehaviour
 {
     public Rigidbody player_rb;
     public int speed;
+    public int jumps_allowed_when_powered;
     public bool terrain;
     public bool climb;
+    public bool jumped;
     public GameObject game_manager;
     public GameObject store;
     public string dist = "";
     public Text distance_from_feather;
     public bool player_can_move = true;
+
+    void Start()
+    {
+        jumps_allowed_when_powered = 5;
+    }
     void Update()
     {
         //distance_from_feather.text = dist;
@@ -29,12 +36,23 @@ public class player_move : MonoBehaviour
             }
             if (Input.GetKey("space"))
             {
-                if (player_rb.velocity.y >= -3)
+                if (player_rb.velocity.y >= -3 && climb)
                 {
-                    if (climb)
-                    {
-                        player_rb.velocity = transform.TransformDirection(Vector3.up * speed*15);
-                    }
+                   if (jumps_allowed_when_powered > 0)
+                   {
+                       jumped = true;
+                       if (jumped == true)
+                       {
+                           player_rb.velocity = transform.TransformDirection(Vector3.up * speed * 15);
+                           jumps_allowed_when_powered -= 1;
+                           print(jumps_allowed_when_powered);
+                           jumped = false;
+                       }
+                   } else
+                   {
+                       climb = false;
+                       jumps_allowed_when_powered = 5;
+                   }                              
                 }
             }
         }

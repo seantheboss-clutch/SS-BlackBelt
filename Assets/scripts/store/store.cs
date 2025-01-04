@@ -40,7 +40,9 @@ public class store : MonoBehaviour
         Instantiate(store_items[price_req - 1], new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z), Quaternion.identity);
         game_manager.GetComponent<GameManager>().transaction = prices[price_req - 1];
         game_manager.GetComponent<GameManager>().buy = true;
+        player.GetComponent<player_powerup>().powerup = $"{store_items[price_req - 1]}";
         /*can_buy_item = false;*/
+        can_buy_item = false;
         request_pur = false;
     }
 }

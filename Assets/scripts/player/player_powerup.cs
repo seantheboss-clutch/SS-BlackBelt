@@ -15,15 +15,8 @@ public class player_powerup : MonoBehaviour
                 break;
             case "hook":
                 this.GetComponent<player_move>().climb = true;
-                Invoke("Turn_off_hook", 3f);
                 break;
            
         }
-    }
-   
-    void Turn_off_hook()
-    {
-        this.GetComponent<player_move>().climb = false;
-
     }
 }

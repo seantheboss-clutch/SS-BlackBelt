@@ -40,7 +40,9 @@ public class player_collision : MonoBehaviour
             {
                GameManager.GetComponent<GameManager>().player_touched_well = true;
             }
-            collision.gameObject.SetActive(false);  
+            //GameObject c = collision.gameObject.GetComponent<well_placeholder>().plane_child;
+            //c.SetActive(false);
+            collision.gameObject.SetActive(false);
             
         }
         if(collision.gameObject.CompareTag("village"))

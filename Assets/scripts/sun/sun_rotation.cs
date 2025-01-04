@@ -42,6 +42,7 @@ public class sun_rotation : MonoBehaviour
                     h -= 1;
                     m = 59;
                     s = 59;
+                    game_manager.water_count -= 1;
                 }
             }
             else

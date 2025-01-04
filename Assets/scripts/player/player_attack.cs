@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class player_attack : MonoBehaviour
 {
     public eagle_move e_m;
-    public GameObject game_manager;
+    public GameManager game_manager;
     public KeyCode[] attack_letters = new KeyCode[3];
     public Text player_assigned_letter;
     public Text p_attack_limit_time_text;
@@ -50,7 +50,7 @@ public class player_attack : MonoBehaviour
         {
             //Roll();
             p_attack_limit_time -= Time.deltaTime;
-            p_attack_limit_time_text.text = p_attack_limit_time.ToString();
+            p_attack_limit_time_text.text = $"TIME LEFT TO ATTACK: {p_attack_limit_time}";
             if (p_attack_limit_time <= 0)
             {
                 if (!Input.GetKey(attack_letter))
@@ -75,6 +75,7 @@ public class player_attack : MonoBehaviour
                         print("running");
                         e_m.eagle_not_alerted = true;
                         e_m.eagle_not_engaged = true;
+                        game_manager.feather_count += 2;
                     }
                     Roll();
                     p_attack_limit_time = palt;

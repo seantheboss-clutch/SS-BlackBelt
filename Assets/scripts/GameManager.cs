@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             secret_text[i].text = "_"; //SetValue("_", i);
         }
-        final_score_text.text = "";
+        final_score_text.text = "FINAL SCORE: ";
     }
     void Update()
     {
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         endgameobject.SetActive(true);
         lose.SetActive(false);
         final_score = feather_count + water_count+((60-s_r.s)/10)+((60-s_r.m)/10)+((60-s_r.h)/10);
-        final_score_text.text = "FINAL SCORE: " + final_score;
+        final_score_text.text = $"FINAL SCORE: {final_score}";
 
     }
     public void Lose()
