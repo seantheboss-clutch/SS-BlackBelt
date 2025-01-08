@@ -7,9 +7,12 @@ public class sun_rotation : MonoBehaviour
 {
     public Quaternion sq;
     public GameManager game_manager;
+    public GameObject player;
+    public Quaternion p_i_quat;
+    public int pi;
     public Vector3 sv;
     public Light sun;
-    public float sun_speed;
+    public float sun_speed = 90;
     public int sun_count;
     public Text[] time;
     public int h;
@@ -18,8 +21,10 @@ public class sun_rotation : MonoBehaviour
     
     void Awake()
     {
+        //p_i_quat = player.GetComponent<Rigidbody>().rotation;
+
         start_mid_up_rot(0);
-        time[0].text = "1";
+        time[0].text = "10";
         time[1].text = "00";
         time[2].text = "00";
     }
@@ -78,5 +83,24 @@ public class sun_rotation : MonoBehaviour
         sq = Quaternion.Euler(x, 0, 0);
         sv = new Vector3(sq.x, 0, 0);
         sun.transform.Rotate(sv);
+        if ((sun.GetComponent<Rigidbody>().rotation.x <= 0))
+        {
+            player.GetComponent<Renderer>().material.color = Color.yellow;
+            StartCoroutine(NightDanger());
+
+        } else
+        {
+            player.GetComponent<Renderer>().material.color = Color.black;
+
+        }
+    }
+    IEnumerator NightDanger()
+    {
+        for(int w = 0; w < 100; w++)
+        {
+            game_manager.water_count -= 2;
+            game_manager.water_count *= 4;
+        }
+        yield return null;
     }
 }

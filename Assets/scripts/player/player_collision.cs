@@ -19,12 +19,14 @@ public class player_collision : MonoBehaviour
             feather_i.GetComponent<feather_instantiation>().collected = true;
             
         }
+
         if(collision.gameObject.CompareTag("journal"))
         {
             Destroy(collision.gameObject);
             GameManager.GetComponent<GameManager>().revelation = true;
             Destroy(collision.gameObject);
-        }   
+        }
+        
         if (collision.gameObject.tag == "terrain")
         {
             this.GetComponent<player_move>().terrain = true;
@@ -33,6 +35,7 @@ public class player_collision : MonoBehaviour
             this.GetComponent<player_move>().terrain = false;
 
         }
+
         if (collision.gameObject.tag == "well")
         { 
 
@@ -43,8 +46,12 @@ public class player_collision : MonoBehaviour
             //GameObject c = collision.gameObject.GetComponent<well_placeholder>().plane_child;
             //c.SetActive(false);
             collision.gameObject.SetActive(false);
-            
         }
+        if(collision.gameObject.tag == "water")
+        {
+            collision.gameObject.SetActive(false);
+        }
+        
         if(collision.gameObject.CompareTag("village"))
         {
             GameManager.GetComponent<GameManager>().end_game = true;

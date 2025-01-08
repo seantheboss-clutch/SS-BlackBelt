@@ -10,6 +10,7 @@ TagManager:
   - terrain
   - well
   - journal
+  - water
   layers:
   - Default
   - TransparentFX

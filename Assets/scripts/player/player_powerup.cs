@@ -6,6 +6,11 @@ public class player_powerup : MonoBehaviour
 {
     public GameObject game_manager;
     public string powerup;
+
+    void Start()
+    {
+        powerup = "hey";
+    }
     void Update()
     {
         switch (powerup)
