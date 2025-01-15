@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     public string[] journal_secrets = {"I","'","M","I","N","N","E","S","T"};
     public Text[] secret_text = {};
     public bool revelation;
+    public int revelations;
+    public GameObject friend;
     // Update is called once per fr
     // ame
     void Start()
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
             secret_text[i].text = "_"; //SetValue("_", i);
         }
         final_score_text.text = "FINAL SCORE: ";
+        friend.SetActive(false);
     }
     void Update()
     {
@@ -103,7 +106,13 @@ public class GameManager : MonoBehaviour
             if (revelation)
             {
                 Reveal();
-                revelation = false;
+                revelations += 1;
+                revelation = false;    
+                
+            }
+            if(revelations == 10)
+            {
+                friend.SetActive(true);
             }
 
             

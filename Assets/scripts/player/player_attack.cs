@@ -85,8 +85,9 @@ public class player_attack : MonoBehaviour
         }
         else
         {
-            /*e_m.eagle_not_alerted = true;
-            e_m.eagle_not_engaged = true;*/
+            e_m.eagle_not_alerted = true;
+            e_m.eagle_not_engaged = true;
+            game_manager.water_count += 1;
         }
     }
 

@@ -549,7 +549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PrESS ENTER TO CONTINUE
+  m_Text: SLIDE TO CONTINUE
 --- !u!222 &528122845
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1677,7 +1677,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
     m_FontStyle: 1
     m_BestFit: 0
@@ -1689,7 +1689,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: you can spend collected eagle feathers on extra water and climbing hooks.
+  m_Text: You can spend collected eagle feathers on extra water and climbing hooks.
 --- !u!222 &1744430758
 CanvasRenderer:
   m_ObjectHideFlags: 0

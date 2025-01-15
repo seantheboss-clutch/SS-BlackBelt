@@ -83,24 +83,31 @@ public class sun_rotation : MonoBehaviour
         sq = Quaternion.Euler(x, 0, 0);
         sv = new Vector3(sq.x, 0, 0);
         sun.transform.Rotate(sv);
-        if ((sun.GetComponent<Rigidbody>().rotation.x <= 0))
+        Debug.Log(sun.transform.rotation.x);
+        if ((sun.transform.rotation.eulerAngles.x <= 240 && sun.transform.rotation.eulerAngles.x >= 0))
+        {
+            player.GetComponent<Renderer>().material.color = Color.black;
+            StartCoroutine(AvertedNightDanger());
+        } else
         {
             player.GetComponent<Renderer>().material.color = Color.yellow;
             StartCoroutine(NightDanger());
-
-        } else
-        {
-            player.GetComponent<Renderer>().material.color = Color.black;
 
         }
     }
     IEnumerator NightDanger()
     {
-        for(int w = 0; w < 100; w++)
+        int diff = 4;
+        diff /= 10;
+        game_manager.water_count -= diff;
+        
+        yield return new WaitForSeconds(3);
+    }
+    IEnumerator AvertedNightDanger()
+    {      
+        for (int w = 0; w < 100; w++)
         {
-            game_manager.water_count -= 2;
-            game_manager.water_count *= 4;
         }
-        yield return null;
+       yield return new WaitForSeconds(3);
     }
 }

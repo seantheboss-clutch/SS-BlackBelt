@@ -438,7 +438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PrESS ENTER TO CONTINUE
+  m_Text: SLIDE TO CONTINUE
 --- !u!222 &528122845
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1668,8 +1668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 126, y: -57.7106}
-  m_SizeDelta: {x: 359.363, y: 124.4782}
+  m_AnchoredPosition: {x: 126, y: -69.396515}
+  m_SizeDelta: {x: 359.363, y: 187.735}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744430757
 MonoBehaviour:
@@ -1692,7 +1692,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
     m_FontStyle: 1
     m_BestFit: 0
@@ -1704,11 +1704,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: As you battle to make it to the village, beware of the fearsome catyr eagles
+  m_Text: As you battle to make it to the village, beware of the fearsome Catyr eagle
     flying overhead. While their feathers give you points to spend on powerups like
     water and climbing hooks, the eagles themselves will tear you to shreds unless
     you master the hidden Rosari magic by typing the letters Q.B, and P in precisely
-    the right order. Too many mistakes, and you die.
+    the right order. Too many mistakes, and you die. However, if you hold off the
+    eagle long enough, it will fly away, and you'll receive water.
 --- !u!222 &1744430758
 CanvasRenderer:
   m_ObjectHideFlags: 0
