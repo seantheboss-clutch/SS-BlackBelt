@@ -23,8 +23,8 @@ public class feather_instantiation : MonoBehaviour
     }
     void Scatter(bool start)
     {
-        randx = Random.Range(1500, 2500);
-        randz = Random.Range(1500, 2500);
+        randx = Random.Range(3000, 5000);
+        randz = Random.Range(3000, 5000);
         if(start == false)
         {
             old_feather = feather;

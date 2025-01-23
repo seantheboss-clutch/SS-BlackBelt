@@ -683,7 +683,7 @@ MonoBehaviour:
   intro_rot: {x: 90, y: 0, z: 0}
   intro_quat: {x: 0, y: 0, z: 0, w: 0}
   x: 0
-  y: 90
+  y: 5
   z: 0
 --- !u!135 &664584030
 SphereCollider:

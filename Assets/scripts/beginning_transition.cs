@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
     public Slider s_beginning;
+    public Slider s_back;
     public int scene_index;
 
     void Start()
     {
         s_beginning.value = 0;
+        s_back.value = 0;
     }
 
     
@@ -20,5 +22,10 @@ public class NewBehaviourScript : MonoBehaviour
         {
             SceneManager.LoadScene(scene_index);
         }
+        if (s_back.value >= 1)
+        {
+            SceneManager.LoadScene(scene_index-2);
+        }
+
     }
 }

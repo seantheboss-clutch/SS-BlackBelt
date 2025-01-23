@@ -828,6 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   s_beginning: {fileID: 1389272694}
+  s_back: {fileID: 0}
   scene_index: 2
 --- !u!4 &903375501
 Transform:
@@ -1316,9 +1317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intro_rot: {x: 45, y: 45, z: 45}
   intro_quat: {x: 0, y: 0, z: 0, w: 0}
-  x: 45
-  y: 45
-  z: 45
+  x: 5
+  y: 5
+  z: 5
 --- !u!65 &1642558455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1781,11 +1782,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You've traversed JUNGLES, OCEANS, and VAST PLANETS to arrive at the remote
+  m_Text: 'You''ve traversed JUNGLES, OCEANS, and VAST PLANETS to arrive at the remote
     village of Rosarion, the anthropological wonder of the planet Usiranavis. However,
-    before the village will permit your entrance, you must prove your strength against
-    the fearsome Catyr Eagles, the very beasts that took the life of your best friend
-    Brandling Varmecht 5 years ago. \n"
+    before you can arrive in the village, you must prove your strength against the
+    fearsome Catyr Eagles in the most deadly area of Usiranavis: the so-called "Kingdom
+    of Hercules".
+
+'
 --- !u!222 &1744430758
 CanvasRenderer:
   m_ObjectHideFlags: 0

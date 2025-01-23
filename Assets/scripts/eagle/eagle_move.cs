@@ -77,8 +77,8 @@ public class eagle_move : MonoBehaviour
     }
     void randomEncounter()
     {
-        int rand_ = Random.Range(0, 10);
-        print(rand);
+        rand = Random.Range(0, 10);
+        print(rand+" where the flip is randall");
     }
    
 }
