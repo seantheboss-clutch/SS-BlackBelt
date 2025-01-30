@@ -23,14 +23,14 @@ public class feather_instantiation : MonoBehaviour
     }
     void Scatter(bool start)
     {
-        randx = Random.Range(3000, 5000);
-        randz = Random.Range(3000, 5000);
+        randx = Random.Range(1828, 2488);
+        randz = Random.Range(1285, 2340);
         if(start == false)
         {
             old_feather = feather;
             old_feather.SetActive(false);
         }
-        feather = Instantiate(feather,new Vector3(randx, 3000, randz),Quaternion.identity);
+        feather = Instantiate(feather,new Vector3(randx, 100, randz),Quaternion.identity);
         feather.SetActive(true);
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class player_move : MonoBehaviour
 {
     public Rigidbody player_rb;
+    public ParticleSystem walking;
+    public ParticleSystem backward_walk;
     public int speed;
     public int jumps_allowed_when_powered;
     public bool terrain;
@@ -13,13 +15,13 @@ public class player_move : MonoBehaviour
     public bool jumped;
     public GameObject game_manager;
     public GameObject store;
-    public string dist = "";
     public Text distance_from_feather;
     public bool player_can_move = true;
 
     void Start()
     {
         jumps_allowed_when_powered = 5;
+        distance_from_feather.text = "Cold";
     }
     void Update()
     {
@@ -29,10 +31,12 @@ public class player_move : MonoBehaviour
             if (Input.GetKey("w"))
             {
                 player_rb.velocity = transform.TransformDirection(Vector3.forward * speed);
+                walking.Play();
             }
             if (Input.GetKey("s"))
             {
                 player_rb.velocity = transform.TransformDirection(Vector3.back * speed);
+                backward_walk.Play();
             }
             if (Input.GetKey("space"))
             {

@@ -18,19 +18,19 @@ public class feather_detection : MonoBehaviour
         distance = Vector3.Distance(player.transform.position, this.transform.position);
         if(player)
         {
-            /*if(distance <= 500)
+            if(distance <= 500)
             {
-                player.GetComponent<player_move>().dist= "Hot";
+                player.GetComponent<player_move>().distance_from_feather.text= "Hot";
             } else if(distance > 500 & distance < 1000)
             {
-                player.GetComponent<player_move>().dist= "Warm";
+                player.GetComponent<player_move>().distance_from_feather.text= "Warm";
             }
             else
             {
-                player.GetComponent<player_move>().dist = "Cold";
+                player.GetComponent<player_move>().distance_from_feather.text = "Cold";
 
-            }*/
-            player.GetComponent<player_move>().dist = distance.ToString();
+            }
+            player.GetComponent<player_move>().distance_from_feather.text = distance.ToString();
         }
     }
 }

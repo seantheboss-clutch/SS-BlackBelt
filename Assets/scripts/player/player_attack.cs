@@ -12,7 +12,7 @@ public class player_attack : MonoBehaviour
     public Text p_attack_limit_time_text;
     public KeyCode attack_letter = KeyCode.B;
     public int p_attack_count = 0;
-    public int p_required_attack_streak = 10;
+    public int p_required_attack_streak = 3;
     public int index_picked = 0;
     public int times_eagle_attacked = 0;
     public float p_attack_limit_time = 5;

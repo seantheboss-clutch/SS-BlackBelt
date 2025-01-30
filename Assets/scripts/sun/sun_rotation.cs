@@ -12,7 +12,7 @@ public class sun_rotation : MonoBehaviour
     public int pi;
     public Vector3 sv;
     public Light sun;
-    public float sun_speed = 90;
+    public float sun_speed = 30;
     public int sun_count;
     public Text[] time;
     public int h;
