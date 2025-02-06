@@ -80,7 +80,10 @@ public class player_attack : MonoBehaviour
                     Roll();
                     p_attack_limit_time = palt;
 
-                }   
+                } else
+                {
+                    game_manager.GetComponent<GameManager>().water_casualty = 1;
+                }
             }
         }
         else

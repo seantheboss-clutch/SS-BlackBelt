@@ -9,7 +9,7 @@ public class store : MonoBehaviour
     public GameObject[] store_items;
     public bool can_buy_item;
     public bool cbi;
-    public int feather_count_st;
+    public float feather_count_st;
     public string[] names_of_items = {
         "water",
         "hook",

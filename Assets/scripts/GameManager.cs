@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("feathers")]
-    public int feather_count;
+    public float feather_count;
 
 
     [Header("store")]
@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     public GameObject store;
 
     [Header("water")]
-    public int water_count;
+    public float water_count;
     public bool water_obtained;
-    public int water_casualty;
+    public float water_casualty;
 
     public GameObject player;
     public bool player_touched_well;
@@ -34,8 +34,9 @@ public class GameManager : MonoBehaviour
     public Animator endgame;
     public GameObject lose;
     public GameObject win;
-    public int final_score;
+    public float final_score;
     public Text final_score_text;
+    public Text ui;
 
     [Header("Sliders")]
     public Slider water_slider;
@@ -139,7 +140,7 @@ public class GameManager : MonoBehaviour
     {
         feather_count -= transact;
     }
-    void Casualty(int casualty)
+    void Casualty(float casualty)
     {
         water_count -= casualty;
         water_casualty = 0;

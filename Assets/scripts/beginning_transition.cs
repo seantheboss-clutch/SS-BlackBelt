@@ -8,6 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     public Slider s_beginning;
     public Slider s_back;
     public int scene_index;
+  
 
     void Start()
     {

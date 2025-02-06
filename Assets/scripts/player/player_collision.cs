@@ -5,6 +5,7 @@ using UnityEngine;
 public class player_collision : MonoBehaviour
 {
     public GameObject GameManager;
+    public GameObject friend;
     public Quaternion w_quat = Quaternion.Euler(90f,0f,0f);
     public Vector3 w_rot;
     public GameObject feather_i;
@@ -57,6 +58,9 @@ public class player_collision : MonoBehaviour
             GameManager.GetComponent<GameManager>().end_game = true;
             GameManager.GetComponent<GameManager>().destination = true;
         }
-
+        if (collision.gameObject.CompareTag("friend"))
+        {
+            friend.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 15, this.transform.position.z);
+        }
     }
 }
