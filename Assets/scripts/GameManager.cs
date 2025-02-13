@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
             secret_text[i].text = "_"; //SetValue("_", i);
         }
         final_score_text.text = "FINAL SCORE: ";
-        friend.SetActive(false);
+        friend.SetActive(true);
         revelations = 9;
         step1.SetActive(false);
         step2.SetActive(false);

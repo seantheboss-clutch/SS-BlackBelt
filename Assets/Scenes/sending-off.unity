@@ -1881,9 +1881,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Once you begin, you will have precisely 10 hours to collect as many eagle
+  m_Text: 'Once you begin, you will have precisely 24 hours to collect as many eagle
     feathers as possible and enter the village, without being eaten alive by the
-    eagles.
+    eagle.
 
 
     Good luck and welcome to the Kingdom of Hercules!'

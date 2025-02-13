@@ -11,8 +11,19 @@ public class player_collision : MonoBehaviour
     public GameObject feather_i;
     public well_assignment wa;
     public bool drink;
-   
-    private void OnCollisionEnter(Collision collision)
+    public bool friend_found;
+    void Start()
+    {
+        friend_found = false;
+    }
+    void Update()
+    {
+        if(friend_found)
+        {
+            friend.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 15, this.transform.position.z);
+        }
+    }
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("feather"))
         {
@@ -60,7 +71,7 @@ public class player_collision : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("friend"))
         {
-            friend.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 15, this.transform.position.z);
+            friend_found = true;
         }
     }
 }

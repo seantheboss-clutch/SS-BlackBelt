@@ -15,11 +15,13 @@ public class player_move : MonoBehaviour
     public bool jumped;
     public GameObject game_manager;
     public GameObject store;
+    public GameObject hanglider;
     public Text distance_from_feather;
     public bool player_can_move = true;
 
     void Start()
     {
+        hanglider.SetActive(false);
         jumps_allowed_when_powered = 5;
         distance_from_feather.text = "Cold";
     }
@@ -52,6 +54,7 @@ public class player_move : MonoBehaviour
                            print(jumps_allowed_when_powered);
                            jumped = false;
                        }
+                        gliding();
                    } else
                    {
                        climb = false;
@@ -77,6 +80,11 @@ public class player_move : MonoBehaviour
         {
             store.GetComponent<store>().price_req = a;
             store.GetComponent<store>().request_pur = true;
+        }
+        void gliding()
+        {
+            hanglider.SetActive(true);
+            hanglider.transform.position = this.transform.position;
         }
     }
 }

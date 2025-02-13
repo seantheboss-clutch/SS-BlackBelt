@@ -1361,7 +1361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f932da6d0c3ab1f46934a14f6e9a5834, type: 2}
+  - {fileID: 2100000, guid: aeb2c5a1941ac3e428c2c92a96ecb67f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Text: 'You''ve traversed JUNGLES, OCEANS, and VAST PLANETS to arrive at the remote
     village of Rosarion, the anthropological wonder of the planet Usiranavis. However,
     before you can arrive in the village, you must prove your strength against the
-    fearsome Catyr Eagles in the most deadly area of Usiranavis: the so-called "Kingdom
+    fearsome Catyr Eagle in the most deadly area of Usiranavis: the so-called "Kingdom
     of Hercules".
 
 '
