@@ -23,7 +23,7 @@ public class eagle_move : MonoBehaviour
     {
         this.transform.position = eagle_start;
         eagle_not_alerted = true;
-        test = false;
+        test = true;
     }
 
     // Update is called once per frame

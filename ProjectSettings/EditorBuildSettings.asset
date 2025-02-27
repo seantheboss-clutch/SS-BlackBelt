@@ -9,22 +9,22 @@ EditorBuildSettings:
     path: Assets/Scenes/first.unity
     guid: a8ad9750aeb50f2449054635b1ff2bce
   - enabled: 1
-    path: Assets/Scenes/premise.unity
+    path: Assets/Scenes/premise2.unity
     guid: 2c3b06549c1d55b458c0de5580fb002f
   - enabled: 1
-    path: Assets/Scenes/water.unity
+    path: Assets/Scenes/water3.unity
     guid: 20818a5973a4e1a428933181a51fa336
   - enabled: 1
-    path: Assets/Scenes/the store.unity
+    path: Assets/Scenes/the store4.unity
     guid: e0dcfc7381f666548986e75c059b9021
   - enabled: 1
-    path: Assets/Scenes/Eagles.unity
+    path: Assets/Scenes/Eagles5.unity
     guid: 96f911f5b83c8aa4dad457ef3d02fca3
   - enabled: 1
-    path: Assets/Scenes/the journals.unity
+    path: Assets/Scenes/the journals6.unity
     guid: d0dfe92cbebf52b40ac7daa7c2bb5efa
   - enabled: 1
-    path: Assets/Scenes/sending-off.unity
+    path: Assets/Scenes/sending-off7.unity
     guid: ca55b5a9657135a43baed5b1fce83b07
   - enabled: 1
     path: Assets/Scenes/KingdomOfHercules.unity

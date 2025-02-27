@@ -1893,9 +1893,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: As you battle to make it to the village, beware of the fearsome Catyr eagle
-    flying overhead. While their feathers give you points to spend on powerups like
-    water and climbing hooks, the eagles themselves will tear you to shreds unless
-    you master the hidden Rosari magic by typing the letters Q.B, and P in precisely
+    flying overhead. While its feathers give you points to spend on powerups like
+    water and climbing hooks, the eagle itself will tear you to shreds unless you
+    master the hidden Rosari magic by typing the letters Q.B, and P in precisely
     the right order. Too many mistakes, and you die. However, if you hold off the
     eagle long enough, it will fly away, and you'll receive water.
 --- !u!222 &1744430758
@@ -1993,7 +1993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -554, y: 67}
+  m_AnchoredPosition: {x: -53, y: 84}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.9119366, y: 0.5}
 --- !u!1 &1991899581
