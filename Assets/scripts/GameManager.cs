@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public float final_score;
     public Text final_score_text;
     public Text ui;
+    public Slider restart;
 
     [Header("Sliders")]
     public Slider water_slider;
@@ -135,6 +136,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if(restart.value >= 1)
+        {
+            Restart();
+        }
     }
     void Debit(int transact)
     {
@@ -162,13 +167,21 @@ public class GameManager : MonoBehaviour
     {
         endgameobject.SetActive(true);
         lose.SetActive(false);
-        final_score = feather_count + water_count+((60-s_r.s)/10)+((60-s_r.m)/10)+((60-s_r.h)/10);
-        final_score_text.text = $"FINAL SCORE: {final_score}";
+        FinalScore();
 
     }
     public void Lose()
     {
         endgameobject.SetActive(true);
         win.SetActive(false);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void FinalScore()
+    {
+        final_score = feather_count + water_count + ((60 - s_r.s) / 10) + ((60 - s_r.m) / 10) + ((60 - s_r.h) / 10);
+        final_score_text.text = $"FINAL SCORE (HIGHEST VALUE IN INTERVAL): {final_score}";
     }
 }

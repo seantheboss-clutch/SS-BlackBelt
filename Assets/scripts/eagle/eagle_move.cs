@@ -7,7 +7,7 @@ public class eagle_move : MonoBehaviour
 {
     public player_attack p_a;
     public eagle_rotation e_r;
-    private bool test;
+    public bool test;
     public bool eagle_not_alerted;
     public Rigidbody eagle_rb;
     public int eagle_distance;
@@ -23,7 +23,7 @@ public class eagle_move : MonoBehaviour
     {
         this.transform.position = eagle_start;
         eagle_not_alerted = true;
-        test = true;
+        test = false;
     }
 
     // Update is called once per frame
