@@ -55,7 +55,7 @@ public class player_attack : MonoBehaviour
             {
                 if (!Input.GetKey(attack_letter))
                 {
-                    game_manager.GetComponent<GameManager>().water_casualty = 1;
+                    game_manager.GetComponent<GameManager>().water_casualty = .1f;
                     Roll();
                     print("Uh");
                     /*                      game_manager.GetComponent<GameManager>().water_casualty = 0;
@@ -70,7 +70,7 @@ public class player_attack : MonoBehaviour
                     print("ayahyahyahyahyah");
                     p_attack_count += 1;
                     print(p_attack_count);
-                    if(p_attack_count >= 20)
+                    if (p_attack_count >= 20)
                     {
                         print("running");
                         e_m.eagle_not_alerted = true;
@@ -82,7 +82,10 @@ public class player_attack : MonoBehaviour
 
                 } else
                 {
-                    game_manager.GetComponent<GameManager>().water_casualty = 1;
+                    wrongKey(KeyCode.B);
+                    wrongKey(KeyCode.Q);
+                    wrongKey(KeyCode.P);
+
                 }
             }
         }
@@ -93,5 +96,11 @@ public class player_attack : MonoBehaviour
             game_manager.water_count += 1;
         }
     }
-
+    void wrongKey(KeyCode key)
+    {
+        if (Input.GetKey(key) && attack_letter != key)
+        {
+            game_manager.GetComponent<GameManager>().water_casualty = .1f;
+        }
+    }
 }

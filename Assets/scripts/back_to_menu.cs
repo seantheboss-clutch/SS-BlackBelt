@@ -5,18 +5,20 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class back_to_menu : MonoBehaviour
 {
+    public Button restart_button;
     // Start is called before the first frame update
     void Start()
     {
+        restart_button.onClick.AddListener(restart);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if(this.value >= 1)
-        {
-            SceneManager.LoadScene(0);
-        }*/
+    }
+    void restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }

@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("in the beginning...")]
+    public int rerun;
+    public int[] high_scores;
+
     [Header("feathers")]
     public float feather_count;
 
@@ -36,6 +40,8 @@ public class GameManager : MonoBehaviour
     public GameObject win;
     public float final_score;
     public Text final_score_text;
+    public float high_score;
+    public Text high_score_text;
     public Text ui;
     public Slider restart;
 
@@ -58,6 +64,9 @@ public class GameManager : MonoBehaviour
     // ame
     void Start()
     {
+        rerun += 1;
+        high_scores[1]++;
+        high_score = high_scores[rerun];
         endgameobject.SetActive(false);
         destination = false;
         water_count = 5;
@@ -70,6 +79,7 @@ public class GameManager : MonoBehaviour
             secret_text[i].text = "_"; //SetValue("_", i);
         }
         final_score_text.text = "FINAL SCORE: ";
+        high_score_text.text = $"{high_score}";
         friend.SetActive(true);
         revelations = 9;
         step1.SetActive(false);
@@ -135,11 +145,6 @@ public class GameManager : MonoBehaviour
                 Lose();
             }
         }
-
-        if(restart.value >= 1)
-        {
-            Restart();
-        }
     }
     void Debit(int transact)
     {
@@ -183,5 +188,7 @@ public class GameManager : MonoBehaviour
     {
         final_score = feather_count + water_count + ((60 - s_r.s) / 10) + ((60 - s_r.m) / 10) + ((60 - s_r.h) / 10);
         final_score_text.text = $"FINAL SCORE (HIGHEST VALUE IN INTERVAL): {final_score}";
+        high_score = final_score;
+        high_score_text.text = $"HIGH SCORE: {high_score}";
     }
 }
