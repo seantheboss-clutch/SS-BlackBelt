@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("in the beginning...")]
-    public int rerun;
-    public int[] high_scores;
+    /*public int rerun;*/ 
+    public high_score_memory hsm;
+    public Text high_score_m_text;
 
     [Header("feathers")]
     public float feather_count;
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     public GameObject win;
     public float final_score;
     public Text final_score_text;
-    public float high_score;
+    public float high_score = 0;
     public Text high_score_text;
     public Text ui;
     public Slider restart;
@@ -63,10 +64,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per fr
     // ame
     void Start()
-    {
-        rerun += 1;
-        high_scores[1]++;
-        high_score = high_scores[rerun];
+    { 
+        high_score_m_text.text = high_score.ToString();
         endgameobject.SetActive(false);
         destination = false;
         water_count = 5;
@@ -187,8 +186,10 @@ public class GameManager : MonoBehaviour
     public void FinalScore()
     {
         final_score = feather_count + water_count + ((60 - s_r.s) / 10) + ((60 - s_r.m) / 10) + ((60 - s_r.h) / 10);
-        final_score_text.text = $"FINAL SCORE (HIGHEST VALUE IN INTERVAL): {final_score}";
-        high_score = final_score;
+        final_score_text.text = $"FINAL SCORE (LOWEST VALUE IN INTERVAL): {final_score}";
+        high_score = Mathf.Max(high_score,final_score);
         high_score_text.text = $"HIGH SCORE: {high_score}";
+        hsm.high_score_m = high_score;
+        
     }
 }
