@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 {
     [Header("in the beginning...")]
     /*public int rerun;*/ 
-    public high_score_memory hsm;
     public Text high_score_m_text;
+    public bool high_score_achieved;
 
     [Header("feathers")]
     public float feather_count;
@@ -63,9 +63,21 @@ public class GameManager : MonoBehaviour
     public GameObject friend;
     // Update is called once per fr
     // ame
-    void Start()
-    { 
+
+    void Awake()
+    {
+        if(!high_score_achieved)
+        {
+            high_score = 0;
+        } else
+        {
+            high_score = PlayerPrefs.GetFloat("High Score");
+        }
         high_score_m_text.text = high_score.ToString();
+        
+    }
+    void Start()
+    {
         endgameobject.SetActive(false);
         destination = false;
         water_count = 5;
@@ -189,7 +201,7 @@ public class GameManager : MonoBehaviour
         final_score_text.text = $"FINAL SCORE (LOWEST VALUE IN INTERVAL): {final_score}";
         high_score = Mathf.Max(high_score,final_score);
         high_score_text.text = $"HIGH SCORE: {high_score}";
-        hsm.high_score_m = high_score;
-        
+        PlayerPrefs.SetFloat("High Score", high_score);
+        high_score_achieved = true;
     }
 }

@@ -18734,8 +18734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1072d4d0d7882ce448df37993be9ffe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rerun: 0
-  high_scores: 0000000000000000
+  high_score_m_text: {fileID: 568360614}
+  high_score_achieved: 0
   feather_count: 0
   got: 0
   buy: 0
@@ -24642,7 +24642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -351, y: 226}
+  m_AnchoredPosition: {x: 267, y: 138}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044861526
