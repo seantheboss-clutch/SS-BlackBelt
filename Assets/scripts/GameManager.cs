@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public float water_count;
     public bool water_obtained;
     public float water_casualty;
+    
 
     public GameObject player;
     public bool player_touched_well;
@@ -45,11 +46,13 @@ public class GameManager : MonoBehaviour
     public Text high_score_text;
     public Text ui;
     public Slider restart;
+    public Text win_or_lose;
 
     [Header("Sliders")]
     public Slider water_slider;
+    public Text water_count_text;
     public Slider feather_slider;
-    public Slider time_slider;
+    public Text feather_count_text;
 
 
     [Header("journals")]
@@ -66,14 +69,15 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if(!high_score_achieved)
+        /*if(PlayerPrefs.GetInt("high_score_achived") != 1)
         {
             high_score = 0;
         } else
         {
             high_score = PlayerPrefs.GetFloat("High Score");
-        }
-        high_score_m_text.text = high_score.ToString();
+        }*/
+        high_score = PlayerPrefs.GetFloat("High Score");
+        //high_score_m_text.text = $"HIGH SCORE: {high_score.ToString()}";
         
     }
     void Start()
@@ -90,14 +94,17 @@ public class GameManager : MonoBehaviour
             secret_text[i].text = "_"; //SetValue("_", i);
         }
         final_score_text.text = "FINAL SCORE: ";
-        high_score_text.text = $"{high_score}";
+        high_score_text.text = $"High Score: {high_score}";
         friend.SetActive(true);
         revelations = 9;
         step1.SetActive(false);
         step2.SetActive(false);
+        win_or_lose.text = "";
     }
     void Update()
     {
+        feather_count_text.text = $"Feathers Collected: {feather_slider.value.ToString()}";
+        water_count_text.text = $"Water Left: {water_slider.value.ToString()}";
         print(feather_slider.value+"swag");
         if (end_game == false)
         {
@@ -183,6 +190,7 @@ public class GameManager : MonoBehaviour
     {
         endgameobject.SetActive(true);
         lose.SetActive(false);
+        win_or_lose.text = "YOU WIN";
         FinalScore();
 
     }
@@ -190,10 +198,12 @@ public class GameManager : MonoBehaviour
     {
         endgameobject.SetActive(true);
         win.SetActive(false);
+        win_or_lose.text = "YOU LOSE";
+
     }
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(7);
     }
     public void FinalScore()
     {
@@ -202,6 +212,8 @@ public class GameManager : MonoBehaviour
         high_score = Mathf.Max(high_score,final_score);
         high_score_text.text = $"HIGH SCORE: {high_score}";
         PlayerPrefs.SetFloat("High Score", high_score);
-        high_score_achieved = true;
+        PlayerPrefs.SetInt("high_score_achieved",1);
+
+/*        high_score_achieved = true;*/
     }
 }

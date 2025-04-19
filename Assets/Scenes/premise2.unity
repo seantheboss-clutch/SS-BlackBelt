@@ -1113,7 +1113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -188, y: 54}
+  m_AnchoredPosition: {x: -449, y: 54}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.088063404, y: 0.5}
 --- !u!1 &1416176046
@@ -1782,11 +1782,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You''ve traversed JUNGLES, OCEANS, and VAST PLANETS to arrive at the remote
-    village of Rosarion, the anthropological wonder of the planet Usiranavis. However,
-    before you can arrive in the village, you must prove your strength against the
-    fearsome Catyr Eagle in the most deadly area of Usiranavis: the so-called "Kingdom
-    of Hercules".
+  m_Text: 'You''ve traversed JUNGLES, OCEANS, and VAST PLANETS to arrive at a remote,
+    mysterious desert village. However, before you can enter the village, you must
+    prove your strength against the fearsome yellow eagle in the most deadly patch
+    of the desert: the so-called "Kingdom of Hercules".
 
 '
 --- !u!222 &1744430758

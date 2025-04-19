@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/sending-off7.unity
     guid: ca55b5a9657135a43baed5b1fce83b07
   - enabled: 1
+    path: Assets/Scenes/loading.unity
+    guid: af276ae65ee8a0147bb53627e66c7842
+  - enabled: 1
     path: Assets/Scenes/KingdomOfHercules.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

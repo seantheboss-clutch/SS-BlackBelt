@@ -8,6 +8,7 @@ public class sun_rotation : MonoBehaviour
     public Quaternion sq;
     public GameManager game_manager;
     public GameObject player;
+    public Skybox skybox;
     public Quaternion p_i_quat;
     public int pi;
     public Vector3 sv;
@@ -21,7 +22,6 @@ public class sun_rotation : MonoBehaviour
     
     void Awake()
     {
-        //p_i_quat = player.GetComponent<Rigidbody>().rotation;
 
         start_mid_up_rot(0);
         time[0].text = "10";
@@ -33,32 +33,9 @@ public class sun_rotation : MonoBehaviour
     void Update()
     {
         start_mid_up_rot(sun_speed);
-        if (s < 0)
+        if (game_manager.end_game == false)
         {
-            if (m < 0)
-            {
-                if (h < 0)
-                {
-                    game_manager.end_game = true;
-                    game_manager.Lose();
-                }
-                else
-                {
-                    h -= 1;
-                    m = 59;
-                    s = 59;
-                    game_manager.water_count -= 1;
-                }
-            }
-            else
-            {
-                m -= 1;
-                s = 59;
-            }
-        }
-        else
-        {
-            s -= 1;
+            runSun();
         }
         time[0].text = h.ToString();
         if(m < 10)
@@ -87,6 +64,7 @@ public class sun_rotation : MonoBehaviour
         if ((sun.transform.rotation.eulerAngles.x <= 240 && sun.transform.rotation.eulerAngles.x >= 0))
         {
             player.GetComponent<Renderer>().material.color = Color.black;
+           
             StartCoroutine(AvertedNightDanger());
         } else
         {
@@ -105,9 +83,39 @@ public class sun_rotation : MonoBehaviour
     }
     IEnumerator AvertedNightDanger()
     {      
-        for (int w = 0; w < 100; w++)
-        {
-        }
        yield return new WaitForSeconds(3);
+    }
+    void runSun()
+    {
+        if (game_manager.end_game == false)
+        {
+            if (s < 0)
+            {
+                if (m < 0)
+                {
+                    if (h < 0)
+                    {
+                        game_manager.end_game = true;
+                        game_manager.Lose();
+                    }
+                    else
+                    {
+                        h -= 1;
+                        m = 59;
+                        s = 59;
+                        game_manager.water_count -= 1;
+                    }
+                }
+                else
+                {
+                    m -= 1;
+                    s = 59;
+                }
+            }
+            else
+            {
+                s -= 1;
+            }
+        }
     }
 }

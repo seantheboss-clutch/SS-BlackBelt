@@ -17,6 +17,7 @@ public class player_move : MonoBehaviour
     public GameObject store;
     public GameObject hanglider;
     public Text distance_from_feather;
+    public GameObject canvas_object;
     public bool player_can_move = true;
 
     void Start()
@@ -24,6 +25,7 @@ public class player_move : MonoBehaviour
         hanglider.SetActive(false);
         jumps_allowed_when_powered = 5;
         distance_from_feather.text = "Cold";
+        canvas_object.SetActive(true);
     }
     void Update()
     {
@@ -34,6 +36,10 @@ public class player_move : MonoBehaviour
             {
                 player_rb.velocity = transform.TransformDirection(Vector3.forward * speed);
                 walking.Play();
+            }
+            else
+            {
+                player_rb.velocity = transform.TransformDirection(Vector3.forward*0);
             }
             if (Input.GetKey("s"))
             {
@@ -76,6 +82,14 @@ public class player_move : MonoBehaviour
         {
             setUpOrder(3);
         }
+        if(Input.GetKey("0"))
+        {
+            canvas_object.SetActive(true);
+        }
+        if (Input.GetKey("-"))
+        {
+            canvas_object.SetActive(false);
+        }
         void setUpOrder(int a)
         {
             store.GetComponent<store>().price_req = a;
@@ -84,7 +98,7 @@ public class player_move : MonoBehaviour
         void gliding()
         {
             hanglider.SetActive(true);
-            hanglider.transform.position = this.transform.position;
+            hanglider.transform.position = new Vector3(this.transform.position.x+10,this.transform.position.y+20,this.transform.position.z);
         }
     }
 }

@@ -589,7 +589,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PrESS ENTER TO CONTINUE
+  m_Text: Slide to continue or go back
 --- !u!222 &528122845
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -846,7 +846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -188, y: 44}
+  m_AnchoredPosition: {x: -351, y: 44}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.088063404, y: 0.5}
 --- !u!1 &796112660
@@ -1888,7 +1888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: the waters of usiranavis
+  m_Text: the wells
 --- !u!222 &1709361544
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1967,13 +1967,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'In the deserts of Usiranavis, water is worth a man''s weight in platinum.
-    You can collect water from wells scattered around the desert, which will be tracked
-    by a water meter attached to your visor.
+  m_Text: 'In the desert, water is worth a man''s weight in platinum. You can collect
+    water from wells scattered around the desert, which will be tracked by a water
+    meter attached to your visor.
 
 
-    You must be careful, however,
-    as one of the wells is empty. Which one? Don''t ask me.
+    You must be careful, however, as one of the
+    wells is empty. Which one? Don''t ask me.
 
 '
 --- !u!222 &1744430758
@@ -2339,7 +2339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -53, y: 67}
+  m_AnchoredPosition: {x: -216, y: 67}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.9119366, y: 0.5}
 --- !u!1660057539 &9223372036854775807

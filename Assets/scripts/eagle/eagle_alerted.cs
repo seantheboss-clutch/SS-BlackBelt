@@ -14,6 +14,7 @@ public class eagle_alerted : MonoBehaviour
         if (Physics.Raycast(this.transform.position, Vector3.down, 2000f, layerMask) || e_m.rand == 7)
         {
             this.GetComponent<eagle_move>().eagle_not_alerted = false;
+            player.GetComponent<player_move>().canvas_object.SetActive(true);
         }
     }
 }
