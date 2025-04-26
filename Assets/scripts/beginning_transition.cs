@@ -13,6 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         s_beginning.value = 0;
+        if(s_back != null)
         s_back.value = 0;
     }
 
@@ -23,6 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             SceneManager.LoadScene(scene_index);
         }
+        if(s_back != null)
         if (s_back.value >= 1)
         {
             SceneManager.LoadScene(scene_index-2);
