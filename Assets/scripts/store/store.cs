@@ -12,10 +12,9 @@ public class store : MonoBehaviour
     public float feather_count_st;
     public string[] names_of_items = {
         "water",
-        "hook",
-        "light"
+        "hook"
     };
-    public int[] prices = { 1, 3, 5 };
+    public int[] prices = { 1, 3 };
    
     public int price_req;
     public bool request_pur;

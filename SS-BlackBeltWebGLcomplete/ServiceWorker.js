@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-SS-BlackBelt-0.1";
 const contentToCache = [
     "Build/SS-BlackBeltWebGLcomplete.loader.js",
-    "Build/SS-BlackBeltWebGLcomplete.framework.js.br",
-    "Build/SS-BlackBeltWebGLcomplete.data.br",
-    "Build/SS-BlackBeltWebGLcomplete.wasm.br",
+    "Build/SS-BlackBeltWebGLcomplete.framework.js",
+    "Build/SS-BlackBeltWebGLcomplete.data",
+    "Build/SS-BlackBeltWebGLcomplete.wasm",
     "TemplateData/style.css"
 
 ];
