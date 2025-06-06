@@ -24,7 +24,7 @@ public class store : MonoBehaviour
         can_buy_item = false;
         cbi = true;
         store_items[0].SetActive(true);
-        store_items[1].SetActive(true);
+        //store_items[1].SetActive(true);
     }
     void Update()
     {
