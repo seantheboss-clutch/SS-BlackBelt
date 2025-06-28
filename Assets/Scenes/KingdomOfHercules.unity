@@ -18757,11 +18757,11 @@ RectTransform:
   - {fileID: 1065600941}
   - {fileID: 773413863}
   - {fileID: 1236833504}
-  - {fileID: 953227140}
   - {fileID: 568360613}
   - {fileID: 2044861525}
   - {fileID: 1285265134}
   - {fileID: 945100112}
+  - {fileID: 953227140}
   m_Father: {fileID: 1201975097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

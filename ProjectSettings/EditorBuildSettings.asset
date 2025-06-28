@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KingdomOfHercules.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/lose.unity
+    guid: ab36d41b7bfab4f4e8a778ec4e247fa9
+  - enabled: 1
+    path: Assets/Scenes/win.unity
+    guid: c0ed2b8520fc4a44dbe84bbe5faf8392
   m_configObjects: {}

@@ -19,7 +19,7 @@ public class loading : MonoBehaviour
     {
         //this.GetComponent<Rigidbody>().transform.Rotate(loading_v);// loading_q.eulerAngles);
         top_spinner.GetComponent<Rigidbody>().transform.Rotate(loading_v);// loading_q.eulerAngles);
-        Invoke("loaded", 10f);
+        //Invoke("loaded", 10f);
     }
     void loaded()
     {
