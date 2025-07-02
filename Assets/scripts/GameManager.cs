@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
             high_score = PlayerPrefs.GetFloat("High Score");
         }*/
         high_score = PlayerPrefs.GetFloat("High Score");
+
         //high_score_m_text.text = $"HIGH SCORE: {high_score.ToString()}";
         
     }
@@ -192,6 +193,7 @@ public class GameManager : MonoBehaviour
         lose.SetActive(false);
         win_or_lose.text = "YOU WIN";
         FinalScore();
+        SceneManager.LoadScene(10);
 
     }
     public void Lose()
@@ -199,7 +201,7 @@ public class GameManager : MonoBehaviour
         endgameobject.SetActive(true);
         win.SetActive(false);
         win_or_lose.text = "YOU LOSE";
-
+        SceneManager.LoadScene(9);
     }
     public void Restart()
     {
@@ -213,6 +215,7 @@ public class GameManager : MonoBehaviour
         high_score_text.text = $"HIGH SCORE: {high_score}";
         PlayerPrefs.SetFloat("High Score", high_score);
         PlayerPrefs.SetInt("high_score_achieved",1);
+        PlayerPrefs.SetFloat("Final Score", final_score);
 
 /*        high_score_achieved = true;*/
     }
