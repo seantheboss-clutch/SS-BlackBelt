@@ -34,28 +34,28 @@ public class player_move : MonoBehaviour
         {
             if (Input.GetKey("w"))
             {
-                player_rb.velocity = transform.TransformDirection(Vector3.forward * speed);
+                player_rb.linearVelocity = transform.TransformDirection(Vector3.forward * speed);
                 walking.Play();
             }
             else
             {
-                player_rb.velocity = transform.TransformDirection(Vector3.forward*0);
+                player_rb.linearVelocity = transform.TransformDirection(Vector3.forward*0);
             }
             if (Input.GetKey("s"))
             {
-                player_rb.velocity = transform.TransformDirection(Vector3.back * speed);
+                player_rb.linearVelocity = transform.TransformDirection(Vector3.back * speed);
                 backward_walk.Play();
             }
             if (Input.GetKey("space"))
             {
-                if (player_rb.velocity.y >= -3 && climb)
+                if (player_rb.linearVelocity.y >= -3 && climb)
                 {
                    if (jumps_allowed_when_powered > 0)
                    {
                        jumped = true;
                        if (jumped == true)
                        {
-                           player_rb.velocity = transform.TransformDirection(Vector3.up * speed * 15);
+                           player_rb.linearVelocity = transform.TransformDirection(Vector3.up * speed * 15);
                            jumps_allowed_when_powered -= 1;
                            print(jumps_allowed_when_powered);
                            jumped = false;

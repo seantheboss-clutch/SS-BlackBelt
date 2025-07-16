@@ -9,7 +9,7 @@ public class eagle_collision : MonoBehaviour
     public Vector3 v = Vector3.right;
     public void backTrack(Vector3 side)
     {
-        e_m.eagle_rb.velocity = transform.TransformDirection(side * e_m.eagle_speed);
+        e_m.eagle_rb.linearVelocity = transform.TransformDirection(side * e_m.eagle_speed);
         e_m.bumped = true;
     }
 

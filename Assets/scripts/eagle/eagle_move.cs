@@ -30,7 +30,7 @@ public class eagle_move : MonoBehaviour
     {
         if (test)
         {
-            if (eagle_rb.velocity.y <= 0)
+            if (eagle_rb.linearVelocity.y <= 0)
             {
                 eagle_rb.useGravity = false;
                 //Invoke("gravity_check", 1f);
@@ -56,7 +56,7 @@ public class eagle_move : MonoBehaviour
                     }
                     e_r.Eagle_Rotation();
                     //eagle_speed += 1;
-                    eagle_rb.velocity = transform.TransformDirection(Vector3.right * eagle_speed);
+                    eagle_rb.linearVelocity = transform.TransformDirection(Vector3.right * eagle_speed);
                     if (bumped)
                     {
                         bumped = false;
@@ -64,7 +64,7 @@ public class eagle_move : MonoBehaviour
                 }
                 else
                 {
-                    eagle_rb.velocity = transform.TransformDirection(Vector3.right * eagle_speed);
+                    eagle_rb.linearVelocity = transform.TransformDirection(Vector3.right * eagle_speed);
                 }
 
             }
