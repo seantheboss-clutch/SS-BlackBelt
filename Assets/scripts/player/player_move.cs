@@ -66,6 +66,9 @@ public class player_move : MonoBehaviour
                        climb = false;
                        jumps_allowed_when_powered = 5;
                    }                              
+                } else if (player_rb.linearVelocity.y >= 0 && climb == false)
+                {
+                   player_rb.linearVelocity = transform.TransformDirection(Vector3.down * speed * 100);
                 }
             }
         }
