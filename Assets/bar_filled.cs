@@ -16,10 +16,16 @@ public class bar_filled : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(this.transform.position.x+.1f,this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(this.transform.position.x+1.2f,this.transform.position.y, this.transform.position.z);
         if(Vector3.Distance(start_pos_bar,this.transform.position) >= 301)
         {
-            SceneManager.LoadScene(8);
+            if(PlayerPrefs.GetString("nextscene") == "game")
+            {
+               SceneManager.LoadScene(9);
+            } else if(PlayerPrefs.GetString("nextscene") == "store")
+            {
+                SceneManager.LoadScene(8);
+            }
         }
     }
 }

@@ -8,7 +8,8 @@ public class NewBehaviourScript : MonoBehaviour
     public Slider s_beginning;
     public Slider s_back;
     public int scene_index;
-  
+    public bool isdual_game;
+    public string nextscene;
 
     void Start()
     {
@@ -21,12 +22,21 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (s_beginning.value >= 1)
         {
-            SceneManager.LoadScene(scene_index);
+           SceneManager.LoadScene(scene_index);
         }
         if (s_back.value >= 1)
         {
-            SceneManager.LoadScene(scene_index-2);
+           if(isdual_game)
+           {
+             SceneManager.LoadScene(scene_index+1);
+             PlayerPrefs.SetString("nextscene","game");
+           } else
+           {
+             SceneManager.LoadScene(scene_index-2);
+             PlayerPrefs.SetString("nextscene","store");
+           }
         }
+        
 
     }
 }

@@ -44,8 +44,7 @@ public class eagle_move : MonoBehaviour
                     e_r.Eagle_Rotation();
                     eagle_start = this.transform.position;
                     eagle_not_engaged = false;
-                }
-                if (Vector3.Distance(this.transform.position, eagle_start) >= eagle_distance || this.transform.position.y > 400 || bumped)
+                } else if (Vector3.Distance(this.transform.position, eagle_start) >= eagle_distance || this.transform.position.y > 400 || bumped)
                 {
 
                     e_r.eagle_test_rot = new Vector3(Random.Range(-120f, 120f), Random.Range(-120f, 120f), 0f);

@@ -32,7 +32,7 @@ public class player_move : MonoBehaviour
         //distance_from_feather.text = dist;
         if (player_can_move)
         {
-            if (Input.GetKey("w"))
+            if (Input.GetKey("up"))
             {
                 player_rb.linearVelocity = transform.TransformDirection(Vector3.forward * speed);
                 walking.Play();
@@ -41,7 +41,7 @@ public class player_move : MonoBehaviour
             {
                 player_rb.linearVelocity = transform.TransformDirection(Vector3.forward*0);
             }
-            if (Input.GetKey("s"))
+            if (Input.GetKey("down"))
             {
                 player_rb.linearVelocity = transform.TransformDirection(Vector3.back * speed);
                 backward_walk.Play();

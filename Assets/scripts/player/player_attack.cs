@@ -33,7 +33,7 @@ public class player_attack : MonoBehaviour
     {
         if (e_m.eagle_not_alerted == false)
         {
-            Attack_Timer(p_required_attack_streak * (times_eagle_attacked+1));
+            Attack_Timer(p_required_attack_streak );//* (times_eagle_attacked+1));
         }
         player_assigned_letter.text = attack_letter.ToString();
         print(attack_letter);
@@ -57,7 +57,7 @@ public class player_attack : MonoBehaviour
                 {
                     game_manager.GetComponent<GameManager>().water_casualty = .1f;
                     Roll();
-                    print("Uh");
+                    print("ran out of time");
                     /*                      game_manager.GetComponent<GameManager>().water_casualty = 0;
                     */
                     p_attack_limit_time = palt;
@@ -67,40 +67,47 @@ public class player_attack : MonoBehaviour
             {
                 if (Input.GetKey(attack_letter))
                 {
-                    print("ayahyahyahyahyah");
+                    print("successful key");
                     p_attack_count += 1;
                     print(p_attack_count);
-                    if (p_attack_count >= 20)
-                    {
-                        print("running");
-                        e_m.eagle_not_alerted = true;
-                        e_m.eagle_not_engaged = true;
-                        game_manager.feather_count += 2;
-                    }
+                    // REDUNDANT CODE: ACCOMPLISHED IN SUCCEEDING ELSE 
+                    //if (p_attack_count >= p_require_attack_streak)
+                    //{
+                        //print("running");
+                        //e_m.eagle_not_alerted = true;
+                        ///e_m.eagle_not_engaged = true;
+                        //game_manager.feather_count += 2;
+                    //}
                     Roll();
                     p_attack_limit_time = palt;
 
-                } else
-                {
-                    wrongKey(KeyCode.B);
-                    wrongKey(KeyCode.Q);
-                    wrongKey(KeyCode.P);
+                //} else
+                //{
+                    //wrongKey(KeyCode.B);
+                    //wrongKey(KeyCode.Q);
+                    //wrongKey(KeyCode.P);
 
                 }
             }
+            //THIS ONE
         }
         else
         {
+            print("this is the part where you fly away");
             e_m.eagle_not_alerted = true;
             e_m.eagle_not_engaged = true;
-            game_manager.water_count += 1;
+            reward();
         }
     }
-    void wrongKey(KeyCode key)
+    //void wrongKey(KeyCode key)
+    //{
+        //if (Input.GetKey(key) && attack_letter != key)
+        //{
+            //game_manager.GetComponent<GameManager>().water_casualty = .1f;
+        //}
+    //}
+    void reward() 
     {
-        if (Input.GetKey(key) && attack_letter != key)
-        {
-            game_manager.GetComponent<GameManager>().water_casualty = .1f;
-        }
+        game_manager.feather_count += 5;
     }
 }

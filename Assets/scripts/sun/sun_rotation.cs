@@ -60,7 +60,7 @@ public class sun_rotation : MonoBehaviour
         sq = Quaternion.Euler(x, 0, 0);
         sv = new Vector3(sq.x, 0, 0);
         sun.transform.Rotate(sv);
-        Debug.Log(sun.transform.rotation.x);
+        //Debug.Log(sun.transform.rotation.x);
         if ((sun.transform.rotation.eulerAngles.x <= 240 && sun.transform.rotation.eulerAngles.x >= 0))
         {
             player.GetComponent<Renderer>().material.color = Color.black;

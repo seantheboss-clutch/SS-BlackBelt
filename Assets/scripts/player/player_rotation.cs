@@ -9,13 +9,13 @@ public class player_rotation : MonoBehaviour
     public int rot;
     void Update()
     {
-        if (Input.GetKey("a"))
+        if (Input.GetKey("left"))
         {
             player_quat = Quaternion.Euler(0, -rot, 0);
             player_rot = new Vector3(0, player_quat.y, 0);
             this.transform.Rotate(player_rot);
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("right"))
         {
             player_quat = Quaternion.Euler(0, rot, 0);
             player_rot = new Vector3(0, player_quat.y, 0);
