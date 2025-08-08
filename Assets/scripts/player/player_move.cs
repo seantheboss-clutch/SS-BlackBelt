@@ -48,27 +48,28 @@ public class player_move : MonoBehaviour
             }
             if (Input.GetKey("space"))
             {
-                if (player_rb.linearVelocity.y >= -3 && climb)
+                if (player_rb.linearVelocity.y >= -3 && player_rb.linearVelocity.y <= 0 && climb)
                 {
-                   if (jumps_allowed_when_powered > 0)
-                   {
-                       jumped = true;
+                  /* if (jumps_allowed_when_powered > 0)
+                   
+                       jumped = true;*/
                        if (jumped == true)
                        {
-                           player_rb.linearVelocity = transform.TransformDirection(Vector3.up * speed * 15);
+                           player_rb.linearVelocity = transform.TransformDirection(Vector3.up * speed * 3);
                            jumps_allowed_when_powered -= 1;
                            print(jumps_allowed_when_powered);
                            jumped = false;
                        }
                         gliding();
-                   } else
+                  /* } else
                    {
                        climb = false;
-                       jumps_allowed_when_powered = 5;
-                   }                              
+                       //jumps_allowed_when_powered = 5;
+                   }      */                        
                 } else if (player_rb.linearVelocity.y >= 0 && climb == false)
                 {
-                   player_rb.linearVelocity = transform.TransformDirection(Vector3.down * speed * 100);
+                    print("fatso");
+                   //player_rb.linearVelocity = transform.TransformDirection(Vector3.down * speed * 100);
                 }
             }
         }

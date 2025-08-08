@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class player_collision : MonoBehaviour
 {
     public GameObject GameManager;
     public GameObject friend;
+    public GameObject whiteplane;
     public Quaternion w_quat = Quaternion.Euler(90f,0f,0f);
     public Vector3 w_rot;
     public GameObject feather_i;
     public well_assignment wa;
     public bool drink;
     public bool friend_found;
+    public float ab;
+    public Color colorcanvas;
     void Start()
     {
         friend_found = false;
+        this.GetComponent<player_move>().canvas_object.SetActive(false);
+        //colorcanvas = whiteplane.GetComponent<Color>();
+        print(ab);
     }
     void Update()
     {
@@ -29,7 +35,7 @@ public class player_collision : MonoBehaviour
         {
             GameManager.GetComponent<GameManager>().got = true;
             feather_i.GetComponent<feather_instantiation>().collected = true;
-            
+            popupcanvas();
         }
 
         if(collision.gameObject.CompareTag("journal"))
@@ -37,6 +43,8 @@ public class player_collision : MonoBehaviour
             Destroy(collision.gameObject);
             GameManager.GetComponent<GameManager>().revelation = true;
             Destroy(collision.gameObject);
+            print(ab+"where the f the function?");
+            popupcanvas();
         }
         
         if (collision.gameObject.tag == "terrain")
@@ -49,8 +57,8 @@ public class player_collision : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "well")
-        { 
-
+        {
+            popupcanvas();
             if (collision.gameObject.transform.parent.name != wa.dead_well.name)
             {
                GameManager.GetComponent<GameManager>().player_touched_well = true;
@@ -58,6 +66,8 @@ public class player_collision : MonoBehaviour
             //GameObject c = collision.gameObject.GetComponent<well_placeholder>().plane_child;
             //c.SetActive(false);
             collision.gameObject.SetActive(false);
+            
+            popupcanvas();
         }
         if(collision.gameObject.tag == "water")
         {
@@ -73,5 +83,25 @@ public class player_collision : MonoBehaviour
         {
             friend_found = true;
         }
+
+        void popupcanvas()
+        {
+            this.GetComponent<player_move>().canvas_object.SetActive(true);
+            //StartCoroutine(shutdowncanvas());
+        }
+       /* IEnumerator shutdowncanvas()
+        {
+            while(colorcanvas.a > 0)
+            {
+                colorcanvas.a -= .1f;
+                if(colorcanvas.a <= 0)
+                {
+                    break;
+                }
+            }
+            this.GetComponent<player_move>().canvas_object.SetActive(false);
+            yield return null;
+            
+        }*/
     }
 }

@@ -6683,7 +6683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364397194}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13272364, y: 0.04807056, z: -0.006444769, w: 0.98996574}
+  m_LocalRotation: {x: 0.13272364, y: 0.04807057, z: -0.0064447694, w: 0.98996574}
   m_LocalPosition: {x: -1.1, y: 3.1, z: -11.3}
   m_LocalScale: {x: 5, y: 5, z: 0.05}
   m_ConstrainProportionsScale: 0
@@ -10454,7 +10454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13272364, y: 0.04807056, z: -0.006444769, w: 0.98996574}
+  m_LocalRotation: {x: 0.13272364, y: 0.04807057, z: -0.00644477, w: 0.98996574}
   m_LocalPosition: {x: -1.1, y: 3.1000001, z: -11.3}
   m_LocalScale: {x: 1000, y: 1000, z: 10000}
   m_ConstrainProportionsScale: 0
@@ -10899,15 +10899,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065600940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 94}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 135}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1642039847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 692.9995, y: 21.000061}
+  m_AnchoredPosition: {x: 50, y: 129}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065600942
@@ -10932,11 +10932,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 5
+    m_FontSize: 1
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 100
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -11503,6 +11503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201975097}
+  - component: {fileID: 1201975098}
   m_Layer: 5
   m_Name: canvas_object
   m_TagString: Untagged
@@ -11518,7 +11519,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201975096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -121.4}
+  m_LocalPosition: {x: 0, y: 0, z: -125}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11532,6 +11533,14 @@ RectTransform:
   m_AnchoredPosition: {x: -67.099976, y: 83.29993}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1201975098
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201975096}
+  m_CullTransparentMesh: 1
 --- !u!1 &1205791058
 GameObject:
   m_ObjectHideFlags: 0
@@ -17619,7 +17628,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -19685,7 +19694,7 @@ MonoBehaviour:
   player_rb: {fileID: 1677046462}
   walking: {fileID: 1930135924}
   backward_walk: {fileID: 124943713}
-  speed: 200
+  speed: 120
   jumps_allowed_when_powered: 0
   terrain: 0
   climb: 0
@@ -19722,13 +19731,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1718196908}
-  friend: {fileID: 0}
+  friend: {fileID: 26061376}
+  whiteplane: {fileID: 2126562472}
   w_quat: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   w_rot: {x: 90, y: 0, z: 0}
   feather_i: {fileID: 938114208}
   wa: {fileID: 1798338336}
   drink: 0
   friend_found: 0
+  ab: 1
+  colorcanvas: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1677046467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26404,7 +26416,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 56118aa1ae8318f448d92f77db6eae92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

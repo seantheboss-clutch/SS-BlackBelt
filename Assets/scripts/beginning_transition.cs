@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     public Slider s_back;
     public int scene_index;
     public bool isdual_game;
+    public bool instruction_slider_bool;
     public string nextscene;
 
     void Start()
@@ -26,17 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
         if (s_back.value >= 1)
         {
-           if(isdual_game)
-           {
-             SceneManager.LoadScene(scene_index+1);
-             PlayerPrefs.SetString("nextscene","game");
-           } else
-           {
-             SceneManager.LoadScene(scene_index-2);
-             PlayerPrefs.SetString("nextscene","store");
-           }
+            SceneManager.LoadScene(scene_index - 2);
         }
-        
-
     }
 }

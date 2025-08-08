@@ -19,12 +19,18 @@ public class bar_filled : MonoBehaviour
         this.transform.position = new Vector3(this.transform.position.x+1.2f,this.transform.position.y, this.transform.position.z);
         if(Vector3.Distance(start_pos_bar,this.transform.position) >= 301)
         {
-            if(PlayerPrefs.GetString("nextscene") == "game")
+            switch(PlayerPrefs.GetString("nextscene"))
             {
-               SceneManager.LoadScene(9);
-            } else if(PlayerPrefs.GetString("nextscene") == "store")
-            {
-                SceneManager.LoadScene(8);
+                case "game":
+                    SceneManager.LoadScene(9);
+                    break;
+                case "store":
+                    //Change this value later after store scene is created
+                    SceneManager.LoadScene(9);
+                    break;
+                case "instructions":
+                    SceneManager.LoadScene(2);
+                    break;
             }
         }
     }
